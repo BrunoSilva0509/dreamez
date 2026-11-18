@@ -82,6 +82,25 @@ details.fq[open] .fq-i{background:#412E28;color:#F4EBDD}
     <button onClick="{{ openCart }}" aria-label="Abrir carrinho" style="display:flex;gap:6px;font-size:13px;align-items:center;border:0;background:none;padding:4px 0;color:#412E28">carrinho <b style="display:inline-flex;align-items:center;justify-content:center;min-width:22px;height:22px;border-radius:999px;background:#412E28;color:#F4EBDD;font-size:11.5px">{{ bag }}</b></button>
   </div>
 
+  <!-- STORIES · QUEM JÁ EXPERIMENTOU -->
+  <div style="padding:{{ stTopPad }};border-bottom:1px solid #EFE5D3;background:#FFFCF7">
+        <span class="eb" style="display:block;color:#8F513D;margin-bottom:2px">Quem já experimentou</span>
+        <div style="display:flex;gap:{{ stGap }};overflow-x:auto;padding:10px 10px 6px;margin:0 -10px;scrollbar-width:none">
+          <sc-for list="{{ vids }}" as="v" hint-placeholder-count="4">
+            <button onClick="{{ v.open }}" aria-label="{{ v.label }}" style="flex:0 0 auto;border:0;background:none;padding:0;display:flex;flex-direction:column;align-items:center;gap:6px;width:72px">
+              <span class="st-c {{ v.cls }}" style="animation-delay:{{ v.dl }}">
+                <span class="st-ring"></span>
+                <span class="st-play" aria-hidden="true"><svg viewBox="0 0 24 24" fill="#F4EBDD" style="width:9px;height:9px;margin-left:1px"><path d="M7 4.5v15l12-7.5z"></path></svg></span>
+                <span class="st-ph" style="position:relative;z-index:1;display:block;width:100%;height:100%;border-radius:50%;border:2.5px solid #fff;overflow:hidden;background:#322421;animation-delay:{{ v.dl }}">
+                  <img src="{{ v.poster }}" alt="" style="width:100%;height:100%;object-fit:cover;display:block">
+                </span>
+              </span>
+              <span style="font-size:11.5px;color:#4E3C35;white-space:nowrap;max-width:72px;overflow:hidden;text-overflow:ellipsis">{{ v.name }}</span>
+            </button>
+          </sc-for>
+        </div>
+  </div>
+
   <!-- BLOCO 1 · TOPO -->
   <div id="topo" style="display:grid;grid-template-columns:{{ pdpCols }};gap:{{ pdpGap }};padding:{{ pdpPad }};align-items:start">
     <div style="position:{{ galPos }};top:16px;min-width:0">
@@ -171,23 +190,6 @@ details.fq[open] .fq-i{background:#412E28;color:#F4EBDD}
         <span style="font-size:12.5px;color:#4E3C35">{{ bottleTxt }}</span>
       </div>
 
-      <div style="margin-top:32px">
-        <b class="hector" style="display:block;font-size:19px;line-height:1.15;margin-bottom:12px">Quem já experimentou</b>
-        <div style="display:flex;gap:14px;overflow-x:auto;padding:10px 10px 8px;margin:-8px -10px 0;scrollbar-width:none">
-          <sc-for list="{{ vids }}" as="v" hint-placeholder-count="4">
-            <button onClick="{{ v.open }}" aria-label="{{ v.label }}" style="flex:0 0 auto;border:0;background:none;padding:0;display:flex;flex-direction:column;align-items:center;gap:6px;width:72px">
-              <span class="st-c {{ v.cls }}" style="animation-delay:{{ v.dl }}">
-                <span class="st-ring"></span>
-                <span class="st-play" aria-hidden="true"><svg viewBox="0 0 24 24" fill="#F4EBDD" style="width:9px;height:9px;margin-left:1px"><path d="M7 4.5v15l12-7.5z"></path></svg></span>
-                <span class="st-ph" style="position:relative;z-index:1;display:block;width:100%;height:100%;border-radius:50%;border:2.5px solid #fff;overflow:hidden;background:#322421;animation-delay:{{ v.dl }}">
-                  <img src="{{ v.poster }}" alt="" style="width:100%;height:100%;object-fit:cover;display:block">
-                </span>
-              </span>
-              <span style="font-size:11.5px;color:#4E3C35;white-space:nowrap;max-width:72px;overflow:hidden;text-overflow:ellipsis">{{ v.name }}</span>
-            </button>
-          </sc-for>
-        </div>
-      </div>
     </div>
   </div>
 
@@ -691,7 +693,7 @@ class Component extends DCLogic {
       { k: 'Melatonina sozinha não resolveu?', img: './arte-melatonina-sozinha.jpg', alt: 'Mão segurando o Dream EZ: melatonina sozinha não resolveu? Dream EZ junta 5 ativos numa cápsula só', fit: 'cover' },
       { k: 'Benefícios', img: './dream-ez-beneficios.jpg', alt: 'Mão segurando o frasco de Dream EZ ao lado de uma lista de benefícios', fit: 'cover' },
       { k: '5 ativos, 1 cápsula, 60 noites', img: './arte-5-ativos.jpg', alt: 'Frasco de Dream EZ com cápsulas e os cinco ativos: melatonina 0,21 mg, magnésio, triptofano, vitamina B6 e ácido fólico', fit: 'cover' },
-      { k: 'Informação nutricional', img: './tabela-nutricional.jpg', alt: 'Tabela de informação nutricional: porção de 0,5 g (1 cápsula) com magnésio 65 mg (15% VD), vitamina B6 4 mg (308% VD), ácido fólico 550 mcg (137% VD), triptofano 220 mg e melatonina 210 mcg', fit: 'contain' }
+      { k: 'Informação nutricional', img: './tabela-nutricional.jpg', alt: 'Tabela de informação nutricional: porção de 0,5 g (1 cápsula) com magnésio 65 mg (15% VD), vitamina B6 4 mg (308% VD), ácido fólico 550 mcg (137% VD), triptofano 220 mg e melatonina 210 mcg', fit: 'cover' }
     ];
     const g = SLOTS[s.gi];
     const end = new Date(s.now + 59 * 864e5);
@@ -707,7 +709,7 @@ class Component extends DCLogic {
       galPos: d ? 'sticky' : 'relative', galCols: d ? '72px minmax(0,1fr)' : 'minmax(0,1fr)', galPad: d ? '0' : '0 16px',
       galRatio: '4/5',
       mainCol: d ? '2' : '1', thumbsRow: d ? '1' : '2', thumbsDir: d ? 'column' : 'row', thumbSize: d ? '72px' : '52px',
-      boxPad: d ? '0 0 24px' : '28px 20px 16px', pnameSize: d ? '28px' : '24px', tagSize: d ? '50px' : '30px', ladMt: d ? '24px' : '24px', bhStarMb: d ? '14px' : '14px', bhTagMb: d ? '14px' : '12px', bhNameMb: d ? '20px' : '22px', bulMb: d ? '22px' : '0', bulGap: d ? '14px 12px' : '16px 12px', bulIg: d ? '10px' : '8px', bulFs: d ? '13.5px' : '12.5px', bulIc: d ? '34px' : '28px', bulSv: d ? '19px' : '16px', doseShort: d ? 'none' : 'block', doseFull: d ? 'block' : 'none',
+      boxPad: d ? '0 0 24px' : '28px 20px 16px', pnameSize: d ? '28px' : '24px', tagSize: d ? '50px' : '30px', stTopPad: d ? '14px 40px 10px' : '12px 20px 8px', stGap: d ? '22px' : '14px', ladMt: d ? '24px' : '24px', bhStarMb: d ? '14px' : '14px', bhTagMb: d ? '14px' : '12px', bhNameMb: d ? '20px' : '22px', bulMb: d ? '22px' : '0', bulGap: d ? '14px 12px' : '16px 12px', bulIg: d ? '10px' : '8px', bulFs: d ? '13.5px' : '12.5px', bulIc: d ? '34px' : '28px', bulSv: d ? '19px' : '16px', doseShort: d ? 'none' : 'block', doseFull: d ? 'block' : 'none',
       secPad: d ? '56px 32px' : '56px 20px', h2Size: d ? '40px' : '28px', h3Size: d ? '24px' : '20px', heroSize: d ? '52px' : '32px',
       stripMt: d ? '40px' : '36px',
       ritualCols: d ? 'minmax(0,1fr) minmax(0,1fr)' : 'minmax(0,1fr)', ritualImgH: d ? '480px' : '340px', ritualPad: d ? '56px 48px' : '48px 20px 56px',
