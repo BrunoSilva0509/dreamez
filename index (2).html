@@ -1,0 +1,826 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<title>Dream EZ | 4Life Nutrition</title>
+<meta name="description" content="Dream EZ: melatonina 0,21 mg, triptofano, magnésio, vitamina B6 e ácido fólico numa cápsula só. Revitalize seu sono e tenha dias com mais disposição.">
+<meta property="og:title" content="Dream EZ | 4Life Nutrition">
+<meta property="og:description" content="Revitalize seu sono e tenha dias com mais disposição.">
+<meta property="og:image" content="./dream-ez-frasco.jpg">
+<meta name="theme-color" content="#412E28">
+<style>
+@font-face{font-family:'Hector';src:url('./Hector-Regular.woff2') format('woff2');font-weight:400;font-style:normal;font-display:swap}
+@font-face{font-family:'Hanken Grotesk';src:url('./HankenGrotesk.ttf') format('truetype');font-weight:100 900;font-style:normal;font-display:swap}
+h1,h2,.hector{font-family:'Hector','Hanken Grotesk',sans-serif !important;font-weight:400 !important;letter-spacing:-.01em !important}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:#EDE2D1;color:#412E28;font:400 15px/1.5 'Hanken Grotesk',system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+a{color:#5E6545}
+a:hover{color:#412E28}
+button{font:inherit;color:inherit;cursor:pointer}
+details summary{list-style:none}
+details summary::-webkit-details-marker{display:none}
+details[open] .fq-i{transform:rotate(45deg)}
+details.fq summary:focus-visible{outline:2px solid #8F513D;outline-offset:-2px}
+details.fq[open]{border-color:#CAB99E}
+.atv-item{opacity:0;transform:translateX(56px);filter:blur(4px);transition:opacity 1.1s ease,transform 1.4s cubic-bezier(.22,1,.36,1),filter 1.1s ease}
+.atv-on .atv-item{opacity:1;transform:none;filter:none}
+.atv-c{position:relative}
+.atv-wrap{border-radius:50%;overflow:hidden;position:relative;z-index:1}
+.atv-img{animation:atvBreath 8s ease-in-out infinite;transform-origin:center;will-change:transform}
+@keyframes atvBreath{0%,100%{transform:scale(1.03);filter:brightness(.88) saturate(.92)}50%{transform:scale(1.13);filter:brightness(1.08) saturate(1.15)}}
+.atv-halo{position:absolute;inset:4%;border-radius:50%;background:radial-gradient(circle,rgba(202,185,158,.55),rgba(202,185,158,0) 70%);filter:blur(16px);animation:atvHalo 8s ease-in-out infinite;z-index:0;pointer-events:none}
+@keyframes atvHalo{0%,100%{opacity:.1;transform:scale(.9)}50%{opacity:.75;transform:scale(1.14)}}
+.atv-ring{position:absolute;left:-5px;top:-5px;width:calc(100% + 10px);height:calc(100% + 10px);z-index:2;pointer-events:none;transform:rotate(-90deg);overflow:visible}
+.atv-ring circle{fill:none;stroke:#B59767;stroke-width:.7;stroke-dasharray:100;stroke-dashoffset:100;opacity:.8;transition:stroke-dashoffset 1.8s cubic-bezier(.6,.1,.2,1)}
+.atv-on .atv-ring circle{stroke-dashoffset:0}
+.atv-c:hover .atv-img{animation-play-state:paused}
+@media (prefers-reduced-motion:reduce){.atv-item{opacity:1;transform:none;filter:none;transition:none}.atv-img,.atv-halo{animation:none}.atv-ring circle{stroke-dashoffset:0;transition:none}}
+details.fq[open] .fq-i{background:#412E28;color:#F4EBDD}
+.car::-webkit-scrollbar{display:none}
+.st-c{position:relative;width:70px;height:70px;border-radius:50%;padding:3px;display:block}
+.st-ring{position:absolute;inset:0;border-radius:50%;background:#DBDBDB}
+.st-new .st-ring{background:linear-gradient(45deg,#FEDA75 0%,#FA7E1E 25%,#D62976 50%,#962FBF 75%,#4F5BD5 100%)}
+.st-seen .st-c,.st-seen.st-c{padding:2px}
+.st-play{display:none}
+.st-btn:active .st-c{transform:scale(.95)}
+.st-c{transition:transform .15s}
+.rev-item{opacity:0;transform:translateX(64px);transition:opacity 1.1s ease,transform 1.4s cubic-bezier(.22,1,.36,1)}
+.car-on .rev-item{opacity:1;transform:none;animation:carFloat 6.5s ease-in-out infinite}
+.atv-on .atv-c{animation:carFloat 7s ease-in-out infinite}
+@keyframes carFloat{0%,100%{translate:0 0}50%{translate:0 -6px}}
+@media (prefers-reduced-motion:reduce){.rev-item{opacity:1;transform:none;transition:none;animation:none!important}.atv-on .atv-c{animation:none}}
+.ph{display:inline-block;border:1px dashed #B59767;border-radius:4px;padding:0 5px;background:#FAF5EC;color:#5C4A3F;font-weight:600}
+.eb{font:600 11px/1 'Hanken Grotesk',sans-serif;text-transform:uppercase;letter-spacing:.1em}
+@keyframes tk{to{transform:translateX(-50%)}}
+.mob section h2{margin-bottom:16px !important}
+.mob section p{line-height:1.65 !important}
+.mob section li{line-height:1.6}
+@keyframes dzSlide{from{transform:translateX(100%)}to{transform:none}}
+</style>
+</helmet>
+
+<div style="display:flex">
+<div class="{{ frameCls }}" style="width:{{ frameW }};max-width:{{ frameMax }};flex:0 0 auto;margin:0 auto;background:#fff;border:0;border-radius:{{ frameR }};overflow:clip;position:relative">
+
+  <div style="background:#412E28;color:#F4EBDD;overflow:hidden;white-space:nowrap;font-size:12px;height:32px;display:flex;align-items:center">{{ ticker }}</div>
+
+  <div style="display:flex;align-items:center;justify-content:space-between;gap:12px;padding:{{ navPad }};border-bottom:1px solid #E3D7C5">
+    <button aria-label="Abrir menu" style="border:0;background:none;font-size:18px;width:40px;text-align:left;padding:0">☰</button>
+    <a href="#topo" aria-label="4Life Nutrition, início" style="display:block;line-height:0"><img src="./logo-4life.png" alt="4Life" style="height:28px;width:auto;display:block"></a>
+    <div style="display:{{ navLinks }};gap:24px;font-size:14px"><a href="#para-quem" style="color:#412E28;text-decoration:none">Para quem é</a><a href="#comparar" style="color:#412E28;text-decoration:none">Comparar</a><a href="#formula" style="color:#412E28;text-decoration:none">Fórmula</a><a href="#uso" style="color:#412E28;text-decoration:none">Como usar</a><a href="#duvidas" style="color:#412E28;text-decoration:none">Dúvidas</a></div>
+    <button onClick="{{ openCart }}" aria-label="Abrir carrinho" style="display:flex;gap:6px;font-size:13px;align-items:center;border:0;background:none;padding:4px 0;color:#412E28">carrinho <b style="display:inline-flex;align-items:center;justify-content:center;min-width:22px;height:22px;border-radius:999px;background:#412E28;color:#F4EBDD;font-size:11.5px">{{ bag }}</b></button>
+  </div>
+
+  <!-- STORIES · QUEM JÁ EXPERIMENTOU -->
+  <div style="padding:{{ stTopPad }};border-bottom:1px solid #EFEFEF;background:#fff">
+        <span style="display:block;text-align:center;font-size:12px;font-weight:600;color:#262626;margin-bottom:2px">Quem já experimentou</span>
+        <div style="display:flex;justify-content:center;gap:{{ stGap }};overflow-x:auto;padding:8px 4px 4px;scrollbar-width:none">
+          <sc-for list="{{ vids }}" as="v" hint-placeholder-count="4">
+            <button onClick="{{ v.open }}" aria-label="{{ v.label }}" class="st-btn" style="flex:0 0 auto;border:0;background:none;padding:0;display:flex;flex-direction:column;align-items:center;gap:6px;width:72px">
+              <span class="st-c {{ v.cls }}" style="animation-delay:{{ v.dl }}">
+                <span class="st-ring"></span>
+                <span class="st-play" aria-hidden="true"><svg viewBox="0 0 24 24" fill="#F4EBDD" style="width:9px;height:9px;margin-left:1px"><path d="M7 4.5v15l12-7.5z"></path></svg></span>
+                <span class="st-ph" style="position:relative;z-index:1;display:block;width:100%;height:100%;border-radius:50%;border:3px solid #fff;overflow:hidden;background:#EFEFEF">
+                  <img src="{{ v.poster }}" alt="" style="width:100%;height:100%;object-fit:cover;display:block">
+                </span>
+              </span>
+              <span style="font-size:12px;color:#262626;white-space:nowrap;max-width:74px;overflow:hidden;text-overflow:ellipsis;margin-top:2px">{{ v.name }}</span>
+            </button>
+          </sc-for>
+        </div>
+  </div>
+
+  <!-- BLOCO 1 · TOPO -->
+  <div id="topo" style="display:grid;grid-template-columns:{{ pdpCols }};gap:{{ pdpGap }};padding:{{ pdpPad }};align-items:start">
+    <div style="position:{{ galPos }};top:16px;min-width:0">
+      <sc-if value="{{ isDesk }}" hint-placeholder-val="{{ false }}">
+        <div style="display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px">
+          <sc-for list="{{ slots }}" as="s" hint-placeholder-count="5">
+            <button onClick="{{ s.zoom }}" aria-label="{{ s.zl }}" style="grid-column:{{ s.span }};padding:0;border:1px solid #E3D7C5;border-radius:14px;overflow:hidden;background:#fff;cursor:zoom-in;display:block;width:100%">
+              <img src="{{ s.img }}" alt="{{ s.alt }}" style="width:100%;aspect-ratio:4/5;object-fit:{{ s.fit }};display:block;background:#fff">
+            </button>
+          </sc-for>
+        </div>
+      </sc-if>
+      <sc-if value="{{ isMob }}" hint-placeholder-val="{{ true }}">
+        <div style="position:relative">
+          <div id="gal-track" onScroll="{{ galScroll }}" style="display:flex;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;gap:0">
+            <sc-for list="{{ slots }}" as="s" hint-placeholder-count="5">
+              <button onClick="{{ s.zoom }}" aria-label="{{ s.zl }}" style="flex:0 0 100%;scroll-snap-align:center;padding:0 20px;border:0;background:transparent;display:block">
+                <img src="{{ s.img }}" alt="{{ s.alt }}" style="width:100%;aspect-ratio:4/5;object-fit:{{ s.fit }};display:block;border-radius:14px;border:1px solid #E3D7C5;background:#fff">
+              </button>
+            </sc-for>
+          </div>
+          <div style="display:flex;align-items:center;justify-content:center;gap:12px;margin-top:10px">
+            <button onClick="{{ galPrev }}" aria-label="Foto anterior" style="width:34px;height:34px;border-radius:50%;border:1px solid #CAB99E;background:#fff;color:#412E28;font-size:16px;line-height:1">‹</button>
+            <span style="display:flex;gap:6px;align-items:center">
+              <sc-for list="{{ slots }}" as="s" hint-placeholder-count="5">
+                <button onClick="{{ s.go }}" aria-label="{{ s.dl }}" style="width:{{ s.dw }};height:7px;border-radius:999px;border:0;padding:0;background:{{ s.dc }};transition:width .2s"></button>
+              </sc-for>
+            </span>
+            <span style="font-size:12px;color:#6B584F;min-width:36px;text-align:center">{{ galCount }}</span>
+            <button onClick="{{ galNext }}" aria-label="Próxima foto" style="width:34px;height:34px;border-radius:50%;border:1px solid #CAB99E;background:#fff;color:#412E28;font-size:16px;line-height:1">›</button>
+          </div>
+        </div>
+      </sc-if>
+    </div>
+
+    <div style="padding:{{ boxPad }}">
+      <a href="#avaliacoes" style="display:inline-flex;align-items:center;gap:8px;margin:0 0 {{ bhStarMb }};font-size:13px;color:#412E28;text-decoration:none"><span style="color:#B59767;letter-spacing:2px;font-size:15px">★★★★★</span><b>5,0</b><span style="color:#6B584F;text-decoration:underline">4 avaliações</span></a>
+      <p class="hector" style="margin:0 0 {{ bhTagMb }};font-size:{{ tagSize }};line-height:1.08;color:#412E28;text-wrap:balance">Revitalize seu sono e tenha dias com mais disposição.</p>
+      <h1 style="font-size:{{ pnameSize }};line-height:1.1;margin:0 0 {{ bhNameMb }};color:#8F513D">Dream EZ <span style="font-family:'Hanken Grotesk',sans-serif;font-size:13px;font-weight:500;line-height:1;letter-spacing:0;color:#6B584F;vertical-align:middle">· 60 cápsulas</span></h1>
+      <ul style="list-style:none;margin:0 0 {{ bulMb }};padding:0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:{{ bulGap }}">
+        <li style="display:flex;align-items:center;gap:{{ bulIg }};font-size:{{ bulFs }};font-weight:600;color:#412E28;line-height:1.25"><span aria-hidden="true" style="flex:0 0 {{ bulIc }};width:{{ bulIc }};height:{{ bulIc }};border-radius:50%;background:#EFE5D3;color:#8F513D;display:flex;align-items:center;justify-content:center"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" style="width:{{ bulSv }};height:{{ bulSv }}"><path d="M20 14.5A8 8 0 1 1 9.5 4a6.5 6.5 0 0 0 10.5 10.5z"></path><path d="M15 3h3l-3 3h3"></path></svg></span>Pega no sono mais rápido</li>
+        <li style="display:flex;align-items:center;gap:{{ bulIg }};font-size:{{ bulFs }};font-weight:600;color:#412E28;line-height:1.25"><span aria-hidden="true" style="flex:0 0 {{ bulIc }};width:{{ bulIc }};height:{{ bulIc }};border-radius:50%;background:#EFE5D3;color:#8F513D;display:flex;align-items:center;justify-content:center"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" style="width:{{ bulSv }};height:{{ bulSv }}"><path d="M3 18h18M7 18a5 5 0 0 1 10 0M12 5v3M5 10l2 2M19 10l-2 2"></path></svg></span>Acorda com mais disposição</li>
+        <li style="display:flex;align-items:center;gap:{{ bulIg }};font-size:{{ bulFs }};font-weight:600;color:#412E28;line-height:1.25"><span aria-hidden="true" style="flex:0 0 {{ bulIc }};width:{{ bulIc }};height:{{ bulIc }};border-radius:50%;background:#EFE5D3;color:#8F513D;display:flex;align-items:center;justify-content:center"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" style="width:{{ bulSv }};height:{{ bulSv }}"><path d="M10 4a3 3 0 0 0-3 3 3 3 0 0 0-2.5 5A3 3 0 0 0 7 17a3 3 0 0 0 3 3V4zM14 4a3 3 0 0 1 3 3 3 3 0 0 1 2.5 5A3 3 0 0 1 17 17a3 3 0 0 1-3 3V4z"></path></svg></span>Menos cansaço mental</li>
+        <li style="display:flex;align-items:center;gap:{{ bulIg }};font-size:{{ bulFs }};font-weight:600;color:#412E28;line-height:1.25"><span aria-hidden="true" style="flex:0 0 {{ bulIc }};width:{{ bulIc }};height:{{ bulIc }};border-radius:50%;background:#EFE5D3;color:#8F513D;display:flex;align-items:center;justify-content:center"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" style="width:{{ bulSv }};height:{{ bulSv }}"><path d="M12 20c-4 0-7-3-8-7 3 0 6 2 8 5 2-3 5-5 8-5-1 4-4 7-8 7z"></path><path d="M12 18c-2-3-2-8 0-12 2 4 2 9 0 12z"></path></svg></span>Corpo relaxado</li>
+      </ul>
+      <p style="display:{{ doseShort }};margin:22px 0 0;font-size:13px;line-height:1.5;color:#6B584F;padding-top:18px;border-top:1px solid #EFE5D3"><b style="color:#412E28">1 cápsula, 30 min antes de deitar.</b> 5 ativos com a dose de cada um no rótulo.</p>
+      <p style="display:{{ doseFull }};margin:0;font-size:14.5px;line-height:1.5;color:#4E3C35;text-wrap:pretty">Uma cápsula, 30 minutos antes de deitar. Cinco ativos, com a dose de cada um no rótulo: <b style="color:#412E28">melatonina 0,21 mg, triptofano 220 mg, magnésio 65 mg, vitamina B6 4 mg e ácido fólico 550 mcg.</b></p>
+
+      <div style="display:grid;gap:10px;margin-top:{{ ladMt }}" role="radiogroup" aria-label="Opções de compra">
+        <sc-for list="{{ ladder }}" as="o" hint-placeholder-count="3">
+          <button role="radio" aria-checked="{{ o.on }}" onClick="{{ o.pick }}" style="display:grid;grid-template-columns:20px minmax(0,1fr) auto;gap:10px;align-items:start;border:1.5px solid {{ o.border }};background:{{ o.bg }};border-radius:12px;padding:12px;text-align:left;width:100%">
+            <span style="width:18px;height:18px;border-radius:50%;border:1.5px solid #412E28;display:flex;align-items:center;justify-content:center;margin-top:1px"><span style="width:10px;height:10px;border-radius:50%;background:{{ o.dot }}"></span></span>
+            <span style="display:flex;flex-direction:column;gap:3px">
+              <span style="display:flex;gap:8px;align-items:center;flex-wrap:wrap"><b style="font-size:14.5px">{{ o.t }}</b><sc-if value="{{ o.tag }}" hint-placeholder-val="{{ false }}"><span class="eb" style="font-size:9.5px;background:#412E28;color:#F4EBDD;padding:4px 6px;border-radius:3px">{{ o.tag }}</span></sc-if></span>
+              <span style="font-size:12.5px;color:#6B584F">{{ o.d }}</span>
+            </span>
+            <span style="display:flex;flex-direction:column;align-items:flex-end;gap:2px">
+              <span style="display:flex;align-items:center;gap:6px"><sc-if value="{{ o.de }}" hint-placeholder-val="{{ false }}"><s style="font-size:12px;color:#6B584F">{{ o.de }}</s></sc-if><sc-if value="{{ o.off }}" hint-placeholder-val="{{ false }}"><span style="font-size:11px;font-weight:700;color:#F4EBDD;background:#5E6545;padding:2px 6px;border-radius:999px">{{ o.off }}</span></sc-if></span>
+              <strong style="font-size:16px;white-space:nowrap">{{ o.p }}</strong>
+              <span style="font-size:11.5px;font-weight:600;color:#4F5539;background:#E6E9D8;padding:2px 6px;border-radius:4px;white-space:nowrap">{{ o.pn }}</span>
+            </span>
+          </button>
+        </sc-for>
+      </div>
+      <button onClick="{{ toggleBump }}" role="checkbox" aria-checked="{{ bumpOn }}" style="display:grid;grid-template-columns:22px 64px minmax(0,1fr);gap:12px;align-items:center;width:100%;margin-top:10px;padding:12px;border-radius:12px;border:2px dashed {{ bumpBorder }};background:{{ bumpBg }};text-align:left">
+        <span aria-hidden="true" style="width:20px;height:20px;border-radius:5px;border:2px solid #412E28;background:{{ bumpChk }};color:#F4EBDD;display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:700;line-height:1">{{ bumpMark }}</span>
+        <img src="./prod-kit-longevity.jpg" alt="Kit Longevity: Vitamin Code, Dream EZ e NAC" style="width:64px;height:64px;object-fit:cover;border-radius:8px;display:block;background:#F4F2EF">
+        <span style="display:flex;flex-direction:column;gap:3px;min-width:0">
+          <span class="eb" style="font-size:9.5px;color:#8F513D">oferta única nesta compra</span>
+          <b style="font-size:14px;line-height:1.25;color:#412E28">Sim, quero o Kit Longevity completo</b>
+          <span style="font-size:12px;color:#4E3C35;line-height:1.4">Vitamin Code para o dia, NAC e mais um Dream EZ. De <s>R$ 295,76</s> por <b style="color:#412E28">+ R$ 179,90</b> no mesmo pedido.</span>
+        </span>
+      </button>
+
+      <button id="main-cta" onClick="{{ addBag }}" style="width:100%;min-height:56px;border-radius:999px;border:0;background:#412E28;color:#F4EBDD;font-weight:600;font-size:16px;margin-top:22px" style-hover="background:#5A443C">{{ ctaTxt }}</button>
+
+      <div style="display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;margin-top:16px">
+        <div style="background:#F4EBDD;border-radius:8px;padding:9px 8px;font-size:11.5px;line-height:1.35;text-align:center"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#412E28" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="display:block;margin:0 auto 3px"><path d="M2 6h11v9H2zM13 9h4l3 3v3h-7z"></path><circle cx="6" cy="17" r="1.8"></circle><circle cx="17" cy="17" r="1.8"></circle></svg><b>Frete grátis</b> para todo o Brasil</div>
+        <div style="background:#F4EBDD;border-radius:8px;padding:9px 8px;font-size:11.5px;line-height:1.35;text-align:center"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#412E28" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="display:block;margin:0 auto 3px"><path d="M4 12a8 8 0 1 0 2.4-5.7"></path><path d="M4 4v4h4"></path></svg><b>30 dias de garantia</b>, mesmo aberto</div>
+        <div style="background:#F4EBDD;border-radius:8px;padding:9px 8px;font-size:11.5px;line-height:1.35;text-align:center"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#412E28" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="display:block;margin:0 auto 3px"><rect x="3" y="6" width="18" height="12" rx="2"></rect><path d="M3 10h18"></path></svg><b>6x sem juros</b> · Pix · boleto</div>
+      </div>
+      <a href="#quem-responde" style="display:flex;align-items:center;justify-content:center;gap:6px;margin-top:8px;font-size:12px;color:#4E3C35;text-decoration:none"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="#5E6545" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:15px;height:15px"><path d="M12 3l7 3v5c0 4.5-3 8.3-7 10-4-1.7-7-5.5-7-10V6z"></path><path d="M9 12l2 2 4-4"></path></svg><span>Notificado na Anvisa nº 25351045018202548 · RT Daniel Roiz Mencacci</span></a>
+
+      <div style="margin-top:20px;border-radius:12px;border:1px solid #E3D7C5;padding:14px">
+        <div class="eb" style="display:flex;justify-content:space-between;font-size:10.5px;color:#6B584F"><span>noite 1 · hoje</span><span>noite 60 · {{ endShort }}</span></div>
+        <div style="position:relative;height:8px;background:#EADFCB;border-radius:99px;margin:10px 0 8px"><i style="position:absolute;left:0;top:0;bottom:0;width:100%;background:#B59767;border-radius:99px"></i></div>
+        <span style="font-size:12.5px;color:#4E3C35">{{ bottleTxt }}</span>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- BLOCO 2 · PARA QUEM É / NÃO É -->
+  <section id="para-quem" style="padding:{{ secPad }};padding-bottom:{{ chB }};background:#F4EBDD;margin-top:{{ stripMt }}">
+    <div style="display:grid;grid-template-columns:{{ b2Cols }};gap:{{ b2Gap }};align-items:start">
+    <img src="./arte-3h17.jpg" alt="Mulher acordada às 3h17 olhando o celular, com o Dream EZ na mesa de cabeceira: 3h17 e a cabeça não desliga?" style="width:100%;aspect-ratio:4/5;object-fit:cover;border-radius:16px;display:block;position:{{ b2ImgPos }};top:20px">
+    <div>
+    <h2 style="font-size:{{ h2Size }};line-height:1.1;margin:0 0 18px">Para quem é o Dream EZ</h2>
+    <div style="display:grid;grid-template-columns:{{ cols4q }};gap:12px">
+      <div style="display:flex;flex-direction:column;gap:10px;background:#fff;border:1px solid #E3D7C5;border-radius:14px;padding:18px;color:#412E28"><svg viewBox="0 0 111 123.90" fill="currentColor" aria-hidden="true" style="width:30px;height:30px"><path d="M53.06 95.22V28.67C53.06 15.22 42.15 4.32 28.69 4.32C15.24 4.32 4.33 15.22 4.33 28.67V95.22C4.33 108.67 15.24 119.57 28.69 119.57V123.90C12.97 123.90 0.20 111.26 0.00 95.60L0 95.22V28.67C0 12.83 12.84 0 28.69 0C44.54 0 57.39 12.83 57.39 28.67V95.22C57.39 111.06 44.54 123.90 28.69 123.90V119.57C42.15 119.57 53.06 108.67 53.06 95.22Z"></path><path d="M54.68 60.33V64.65H2.43V60.33H54.68Z"></path><path d="M89.88 21.10C91.07 21.10 92.04 22.07 92.04 23.26C92.04 24.46 91.07 25.43 89.88 25.43H72.01C70.81 25.43 69.84 24.46 69.84 23.26C69.84 22.07 70.81 21.10 72.01 21.10H89.88Z"></path><path d="M108.83 58.97C110.03 58.97 111 59.94 111 61.14C111 62.33 110.03 63.30 108.83 63.30H72.01C70.81 63.30 69.84 62.33 69.84 61.14C69.84 59.94 70.81 58.97 72.01 58.97H108.83Z"></path><path d="M89.88 95.22C91.07 95.22 92.04 96.19 92.04 97.39C92.04 98.58 91.07 99.55 89.88 99.55H72.01C70.81 99.55 69.84 98.58 69.84 97.39C69.84 96.19 70.81 95.22 72.01 95.22H89.88Z"></path></svg><b class="hector" style="font-size:18px;line-height:1.15">Melatonina no limite da Anvisa: 0,21 mg.</b><span style="font-size:13.5px;color:#4E3C35;line-height:1.5">Para quem quer transformar o fim do dia num ritual, não num apagar de luz.</span></div>
+      <div style="display:flex;flex-direction:column;gap:10px;background:#fff;border:1px solid #E3D7C5;border-radius:14px;padding:18px;color:#412E28"><svg viewBox="0 0 96 109" fill="none" stroke="currentColor" stroke-width="4.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="width:30px;height:30px"><rect x="2.1" y="2.1" width="91.8" height="104.8" rx="16"></rect><path d="M19 31l6.5 6.5L38 25M50 32h28M19 59l6.5 6.5L38 53M50 60h28M19 87l6.5 6.5L38 81M50 88h20"></path></svg><b class="hector" style="font-size:18px;line-height:1.15">Cada ativo em mg.</b><span style="font-size:13.5px;color:#4E3C35;line-height:1.5">Para quem já usa melatonina isolada e quer saber exatamente o que está tomando.</span></div>
+      <div style="display:flex;flex-direction:column;gap:10px;background:#fff;border:1px solid #E3D7C5;border-radius:14px;padding:18px;color:#412E28"><svg viewBox="0 0 106 102" fill="currentColor" aria-hidden="true" style="width:30px;height:30px"><path d="M89.24 0.00C90.18 -0.01 90.98 0.71 91.04 1.64C91.42 7.27 93.43 10.58 95.71 12.52C98.00 14.47 100.75 15.18 102.86 15.24C103.30 15.21 103.75 15.20 104.21 15.20C105.16 15.20 105.95 15.93 105.99 16.87C106.04 17.81 105.33 18.62 104.38 18.71C103.93 18.76 103.45 18.77 102.95 18.77C98.32 19.10 95.44 21.26 93.65 23.85C91.81 26.52 91.11 29.67 91.04 31.77C91.01 32.73 90.21 33.50 89.23 33.48C88.26 33.47 87.47 32.68 87.47 31.72C87.47 26.52 85.47 23.38 83.09 21.49C80.64 19.54 77.63 18.80 75.59 18.73C75.51 18.72 75.44 18.72 75.36 18.72C74.38 18.69 73.61 17.88 73.64 16.91C73.66 15.95 74.47 15.18 75.45 15.20C75.46 15.20 75.47 15.20 75.48 15.20C75.55 15.20 75.62 15.20 75.69 15.20C80.13 15.29 82.94 13.19 84.75 10.42C86.62 7.57 87.37 4.05 87.47 1.68L87.48 1.60C87.56 0.70 88.32 0.01 89.24 0.00ZM89.24 9.55C88.83 10.50 88.34 11.44 87.75 12.33C86.52 14.21 84.87 15.90 82.74 17.08C83.62 17.53 84.50 18.08 85.33 18.74C86.98 20.06 88.43 21.78 89.46 23.98C89.82 23.26 90.23 22.55 90.70 21.86C92.01 19.97 93.79 18.25 96.13 17.04C95.19 16.55 94.26 15.94 93.38 15.19C91.73 13.79 90.29 11.94 89.24 9.55Z"></path><path d="M31.42 24.83V4.84H26.77C25.78 4.84 24.98 4.05 24.98 3.08C24.98 2.11 25.78 1.32 26.77 1.32H64.04C65.03 1.32 65.82 2.11 65.82 3.08C65.82 4.05 65.03 4.84 64.04 4.84H59.80V25.40C59.80 28.71 60.56 31.96 62.06 34.91C67.73 46.06 77.45 64.60 84.76 76.63C88.36 82.56 89.24 87.51 88.38 91.54C87.52 95.56 84.99 98.36 82.39 100.08C79.87 101.75 76.87 102 74.34 102H16.62C12.37 102 7.63 101.07 4.31 97.71C2.76 96.14 1.18 94.07 0.43 91.60C-0.32 89.06 -0.17 86.20 1.58 83.26C5.81 76.17 22.00 47.25 28.71 35.23C30.49 32.04 31.42 28.48 31.42 24.83ZM34.99 24.83C34.99 29.07 33.91 33.22 31.84 36.93C25.15 48.91 8.92 77.91 4.65 85.05C3.42 87.11 3.36 88.95 3.86 90.59C4.37 92.30 5.53 93.89 6.87 95.25C9.21 97.61 12.76 98.47 16.62 98.47H74.34C76.74 98.47 78.82 98.20 80.40 97.15C82.43 95.81 84.26 93.73 84.88 90.81C85.51 87.90 84.99 83.85 81.70 78.45C74.31 66.29 64.54 47.65 58.87 36.49C57.11 33.04 56.23 29.24 56.23 25.40V4.84H34.99V24.83Z"></path><path d="M15.74 59.57C21.34 57.80 35.53 55.65 48.03 61.18C59.39 66.20 69.97 63.23 73.67 61.24C74.54 60.77 75.62 61.09 76.10 61.94C76.57 62.80 76.25 63.87 75.38 64.33C70.90 66.75 59.14 69.95 46.57 64.40C35.15 59.35 21.94 61.31 16.82 62.92C15.89 63.22 14.88 62.71 14.58 61.78C14.28 60.85 14.80 59.86 15.74 59.57Z"></path></svg><b class="hector" style="font-size:18px;line-height:1.15">Cinco ativos, uma cápsula.</b><span style="font-size:13.5px;color:#4E3C35;line-height:1.5">Para quem prefere isso a montar combinação de três frascos.</span></div>
+      <div style="display:flex;flex-direction:column;gap:10px;background:#fff;border:1px solid #E3D7C5;border-radius:14px;padding:18px;color:#412E28"><svg viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round" aria-hidden="true" style="width:30px;height:30px"><circle cx="50" cy="50" r="46"></circle><path d="M50 22v28l18 12"></path></svg><b class="hector" style="font-size:18px;line-height:1.15">Um horário fixo.</b><span style="font-size:13.5px;color:#4E3C35;line-height:1.5">1 cápsula, 30 minutos antes de deitar, sempre na mesma hora. Para quem quer criar rotina.</span></div>
+    </div>
+    <div style="margin-top:14px;background:#fff;border:1px solid #E3D7C5;border-radius:14px;padding:16px 18px">
+      <b class="hector" style="display:block;font-size:18px;margin-bottom:8px">Para quem não é</b>
+      <ul style="margin:0;padding-left:18px;font-size:13.5px;color:#4E3C35;display:grid;gap:4px">
+        <li>Gestantes e lactantes.</li>
+        <li>Menores de 19 anos.</li>
+        <li>Quem vai dirigir, operar máquinas ou fazer qualquer atividade que exija atenção depois de tomar.</li>
+        <li>Quem usa medicamento de uso contínuo, sem antes falar com o médico.</li>
+        <li>Quem tem insônia ou outro distúrbio do sono diagnosticado: o caminho é o médico. Suplemento não trata doença.</li>
+      </ul>
+    </div>
+    </div>
+    </div>
+  </section>
+
+  <!-- BLOCO 3 · QUEM RESPONDE (RT + ANVISA) -->
+  <section id="quem-responde" style="padding:{{ secPad }};padding-top:0;padding-bottom:{{ chB }};background:#F4EBDD">
+    <span class="eb" style="color:#8F513D">segurança e regularização</span>
+    <h2 style="font-size:{{ h2Size }};line-height:1.1;margin:10px 0 8px">Quem responde pelo Dream EZ</h2>
+    <p style="font-size:14.5px;color:#4E3C35;margin:0 0 {{ qrIntroMb }};max-width:60ch;line-height:1.55">Um suplemento notificado na Anvisa, com farmacêutico responsável e cada dose declarada no rótulo. Sem letra miúda.</p>
+    <div style="background:#fff;border:1px solid #E3D7C5;border-radius:20px;padding:{{ qrPad }};box-shadow:0 10px 30px rgba(65,46,40,.06)">
+      <div style="display:grid;grid-template-columns:{{ qrTop }};gap:{{ qrTopGap }};align-items:center">
+        <span aria-hidden="true" style="flex:none;position:relative;width:{{ qrSeal }};height:{{ qrSeal }};border-radius:50%;background:#412E28;color:#F4EBDD;display:flex;align-items:center;justify-content:center;box-shadow:0 0 0 4px #fff,0 0 0 5px #CAB99E"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" style="width:{{ qrSealIc }};height:{{ qrSealIc }}"><path d="M12 3l7 3v5c0 4.5-3 8.3-7 10-4-1.7-7-5.5-7-10V6l7-3z"></path><path d="M8.8 12.2l2.2 2.2 4.2-4.4"></path></svg></span>
+        <div><b class="hector" style="display:block;font-size:{{ qrH }};line-height:1.12;color:#412E28">Dentro das regras da Anvisa</b><span style="display:block;margin-top:4px;font-size:14px;color:#4E3C35">Notificação nº <b style="color:#412E28;letter-spacing:.3px">25351045018202548</b></span></div>
+        <a href="https://consultas.anvisa.gov.br/#/alimentos/" target="_blank" rel="noopener" style="grid-column:{{ qrBtnCol }};display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:44px;padding:0 20px;border-radius:999px;border:1.5px solid #412E28;color:#412E28;text-decoration:none;font-weight:600;font-size:14px;white-space:nowrap">Consultar na Anvisa <span aria-hidden="true">↗</span></a>
+      </div>
+      <div style="display:grid;grid-template-columns:{{ cols3 }};gap:{{ qrFactsGap }};margin-top:{{ qrFactsMt }}"><div style="display:flex;gap:12px;align-items:flex-start;background:#FAF5EC;border:1px solid #EFE5D3;border-radius:14px;padding:{{ qrFactPad }}"><span aria-hidden="true" style="flex:none;width:38px;height:38px;border-radius:10px;background:#fff;border:1px solid #E3D7C5;color:#8F513D;display:flex;align-items:center;justify-content:center"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" style="width:19px;height:19px"><path d="M7 3.5h7l4 4V20a.5.5 0 0 1-.5.5h-10.5a.5.5 0 0 1-.5-.5V4a.5.5 0 0 1 .5-.5z"></path><path d="M14 3.5V8h4M9.5 13h5M9.5 16.5h5"></path></svg></span><span style="display:flex;flex-direction:column;gap:3px"><b style="font-size:14.5px;color:#412E28;line-height:1.3">Suplemento notificado</b><span style="font-size:13px;color:#6B584F;line-height:1.45">Regularizado na categoria de suplementos alimentares.</span></span></div><div style="display:flex;gap:12px;align-items:flex-start;background:#FAF5EC;border:1px solid #EFE5D3;border-radius:14px;padding:{{ qrFactPad }}"><span aria-hidden="true" style="flex:none;width:38px;height:38px;border-radius:10px;background:#fff;border:1px solid #E3D7C5;color:#8F513D;display:flex;align-items:center;justify-content:center"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" style="width:19px;height:19px"><path d="M19.5 14.5A7.5 7.5 0 0 1 9.5 4.5a7.5 7.5 0 1 0 10 10z"></path></svg></span><span style="display:flex;flex-direction:column;gap:3px"><b style="font-size:14.5px;color:#412E28;line-height:1.3">0,21 mg de melatonina</b><span style="font-size:13px;color:#6B584F;line-height:1.45">O limite máximo diário permitido pela Anvisa.</span></span></div><div style="display:flex;gap:12px;align-items:flex-start;background:#FAF5EC;border:1px solid #EFE5D3;border-radius:14px;padding:{{ qrFactPad }}"><span aria-hidden="true" style="flex:none;width:38px;height:38px;border-radius:10px;background:#fff;border:1px solid #E3D7C5;color:#8F513D;display:flex;align-items:center;justify-content:center"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" style="width:19px;height:19px"><path d="M3.5 12.2V5a1.5 1.5 0 0 1 1.5-1.5h7.2l8.3 8.3a1.5 1.5 0 0 1 0 2.1l-6.7 6.7a1.5 1.5 0 0 1-2.1 0z"></path><circle cx="8.3" cy="8.3" r="1.4"></circle></svg></span><span style="display:flex;flex-direction:column;gap:3px"><b style="font-size:14.5px;color:#412E28;line-height:1.3">Cada dose no rótulo</b><span style="font-size:13px;color:#6B584F;line-height:1.45">Todos os ativos com quantidade declarada.</span></span></div></div>
+      <div style="display:flex;align-items:center;gap:12px;margin-top:{{ qrRtMt }};padding-top:{{ qrRtPt }};border-top:1px dashed #E3D7C5"><span class="hector" aria-hidden="true" style="flex:none;width:40px;height:40px;border-radius:50%;background:#F4EBDD;border:1px solid #CAB99E;color:#412E28;display:flex;align-items:center;justify-content:center;font-size:14px">DM</span><span style="font-size:13.5px;line-height:1.45;color:#4E3C35"><span style="display:block;font-size:11.5px;color:#8F513D;font-weight:600;letter-spacing:.06em;text-transform:uppercase">Responsável técnico</span><b style="color:#412E28">Daniel Roiz Mencacci</b> · Farmacêutico · CRF-SP 32.553</span></div>
+    </div>
+  </section>
+
+  <!-- BLOCO 3 · COMPARAÇÃO -->
+  <section id="comparar" style="padding:{{ secPad }};padding-top:8px;background:#F4EBDD">
+    <h2 style="font-size:{{ h2Size }};line-height:1.1;margin:0 0 8px;max-width:22ch">Dream EZ, melatonina isolada ou três frascos?</h2>
+    <p style="font-size:14px;color:#4E3C35;margin:0 0 18px;max-width:62ch">No Brasil, todo suplemento de melatonina tem o mesmo limite: 0,21 mg por dia. A diferença está no que vem junto e em quantos frascos você precisa abrir.</p>
+    <sc-if value="{{ isDesk }}" hint-placeholder-val="{{ false }}">
+    <div style="overflow-x:auto;border-radius:14px 14px 0 0">
+      <table style="width:100%;min-width:640px;border-collapse:separate;border-spacing:0;table-layout:fixed">
+        <colgroup><col style="width:22%"></col><col style="width:28%"></col><col style="width:25%"></col><col style="width:25%"></col></colgroup>
+        <caption style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)">Comparação dos ativos do Dream EZ com melatonina isolada e com três frascos separados</caption>
+        
+        <thead><tr>
+          <th aria-hidden="true" style="padding:0;border:0;background:transparent"></th>
+          <th scope="col" style="padding:12px;text-align:left;vertical-align:top;background:#412E28;border-radius:14px 14px 0 0"><span style="display:block;aspect-ratio:4/3;border-radius:10px;overflow:hidden;background:#fff;margin-bottom:10px"><img src="./cmp-dreamez.jpg" alt="Frasco de Dream EZ" style="width:100%;height:100%;object-fit:contain;display:block"></span><span class="hector" style="display:block;font-size:20px;color:#F4EBDD;line-height:1.1">Dream EZ</span><span style="display:inline-block;margin-top:6px;font-size:12px;font-weight:700;color:#412E28;background:#CAB99E;border-radius:999px;padding:4px 10px">5 de 5 ativos</span></th>
+          <th scope="col" style="padding:12px;text-align:left;vertical-align:top;background:#fff;border-bottom:1px solid #E3D7C5"><span style="display:block;aspect-ratio:4/3;border-radius:10px;overflow:hidden;background:#EADFCB;margin-bottom:10px"><img src="./cmp-melatonina.jpg" alt="Frasco genérico de melatonina isolada" style="width:100%;height:100%;object-fit:cover;display:block"></span><span class="hector" style="display:block;font-size:17px;color:#412E28;line-height:1.1">Melatonina isolada</span><span style="display:inline-block;margin-top:6px;font-size:12px;font-weight:600;color:#6B584F;background:#F4EBDD;border-radius:999px;padding:4px 10px">1 de 5 ativos</span></th>
+          <th scope="col" style="padding:12px;text-align:left;vertical-align:top;background:#fff;border-bottom:1px solid #E3D7C5"><span style="display:block;aspect-ratio:4/3;border-radius:10px;overflow:hidden;background:#EADFCB;margin-bottom:10px"><img src="./cmp-tres-frascos.jpg" alt="Três frascos genéricos de suplemento" style="width:100%;height:100%;object-fit:cover;display:block"></span><span class="hector" style="display:block;font-size:17px;color:#412E28;line-height:1.1">Três frascos</span><span style="display:inline-block;margin-top:6px;font-size:12px;font-weight:600;color:#6B584F;background:#F4EBDD;border-radius:999px;padding:4px 10px">3 de 5 ativos</span></th>
+        </tr></thead>
+        <tbody>
+          <tr><th scope="row" style="position:sticky;left:0;z-index:1;padding:12px 10px;border-bottom:1px solid #E3D7C5;background:#fff;text-align:left;font-size:12.5px;font-weight:600;color:#412E28">Melatonina</th><td style="padding:12px 10px;border-bottom:1px solid #E3D7C5;background:#F7F0E3"><span style="display:flex;align-items:center;gap:8px;font-size:12.5px;line-height:1.35;font-weight:700;color:#412E28"><svg aria-hidden="true" viewBox="0 0 24 24" style="width:20px;height:20px;flex:0 0 20px"><circle cx="12" cy="12" r="11" fill="#5E6545"></circle><path d="M7 12.5l3.2 3.2L17 9" fill="none" stroke="#fff" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"></path></svg><span style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)">sim</span><span>0,21 mg</span></span></td><td style="padding:12px 10px;border-bottom:1px solid #E3D7C5;background:#fff"><span style="display:flex;align-items:center;gap:8px;font-size:12.5px;line-height:1.35;color:#4E3C35"><svg aria-hidden="true" viewBox="0 0 24 24" style="width:20px;height:20px;flex:0 0 20px"><circle cx="12" cy="12" r="10.5" fill="none" stroke="#5E6545" stroke-width="1.6"></circle><path d="M7 12.5l3.2 3.2L17 9" fill="none" stroke="#5E6545" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"></path></svg><span style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)">sim</span><span>0,21 mg</span></span></td><td style="padding:12px 10px;border-bottom:1px solid #E3D7C5;background:#fff"><span style="display:flex;align-items:center;gap:8px;font-size:12.5px;line-height:1.35;color:#4E3C35"><svg aria-hidden="true" viewBox="0 0 24 24" style="width:20px;height:20px;flex:0 0 20px"><circle cx="12" cy="12" r="10.5" fill="none" stroke="#5E6545" stroke-width="1.6"></circle><path d="M7 12.5l3.2 3.2L17 9" fill="none" stroke="#5E6545" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"></path></svg><span style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)">sim</span><span>0,21 mg</span></span></td></tr>
+          <tr><th scope="row" style="position:sticky;left:0;z-index:1;padding:12px 10px;border-bottom:1px solid #E3D7C5;background:#fff;text-align:left;font-size:12.5px;font-weight:600;color:#412E28">L-triptofano</th><td style="padding:12px 10px;border-bottom:1px solid #E3D7C5;background:#F7F0E3"><span style="display:flex;align-items:center;gap:8px;font-size:12.5px;line-height:1.35;font-weight:700;color:#412E28"><svg aria-hidden="true" viewBox="0 0 24 24" style="width:20px;height:20px;flex:0 0 20px"><circle cx="12" cy="12" r="11" fill="#5E6545"></circle><path d="M7 12.5l3.2 3.2L17 9" fill="none" stroke="#fff" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"></path></svg><span style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)">sim</span><span>220 mg</span></span></td><td style="padding:12px 10px;border-bottom:1px solid #E3D7C5;background:#fff"><span style="display:flex;align-items:center;gap:8px;font-size:12.5px;line-height:1.35;color:#4E3C35"><svg aria-hidden="true" viewBox="0 0 24 24" style="width:20px;height:20px;flex:0 0 20px"><circle cx="12" cy="12" r="10.5" fill="none" stroke="#CAB99E" stroke-width="1.6"></circle><path d="M8.5 8.5l7 7M15.5 8.5l-7 7" stroke="#B8A78F" stroke-width="2" stroke-linecap="round"></path></svg><span style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)">não</span><span>Não tem</span></span></td><td style="padding:12px 10px;border-bottom:1px solid #E3D7C5;background:#fff"><span style="display:flex;align-items:center;gap:8px;font-size:12.5px;line-height:1.35;color:#4E3C35"><svg aria-hidden="true" viewBox="0 0 24 24" style="width:20px;height:20px;flex:0 0 20px"><circle cx="12" cy="12" r="10.5" fill="none" stroke="#5E6545" stroke-width="1.6"></circle><path d="M7 12.5l3.2 3.2L17 9" fill="none" stroke="#5E6545" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"></path></svg><span style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)">sim</span><span>Dose que você calcula</span></span></td></tr>
+          <tr><th scope="row" style="position:sticky;left:0;z-index:1;padding:12px 10px;border-bottom:1px solid #E3D7C5;background:#fff;text-align:left;font-size:12.5px;font-weight:600;color:#412E28">Magnésio</th><td style="padding:12px 10px;border-bottom:1px solid #E3D7C5;background:#F7F0E3"><span style="display:flex;align-items:center;gap:8px;font-size:12.5px;line-height:1.35;font-weight:700;color:#412E28"><svg aria-hidden="true" viewBox="0 0 24 24" style="width:20px;height:20px;flex:0 0 20px"><circle cx="12" cy="12" r="11" fill="#5E6545"></circle><path d="M7 12.5l3.2 3.2L17 9" fill="none" stroke="#fff" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"></path></svg><span style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)">sim</span><span>65 mg</span></span></td><td style="padding:12px 10px;border-bottom:1px solid #E3D7C5;background:#fff"><span style="display:flex;align-items:center;gap:8px;font-size:12.5px;line-height:1.35;color:#4E3C35"><svg aria-hidden="true" viewBox="0 0 24 24" style="width:20px;height:20px;flex:0 0 20px"><circle cx="12" cy="12" r="10.5" fill="none" stroke="#CAB99E" stroke-width="1.6"></circle><path d="M8.5 8.5l7 7M15.5 8.5l-7 7" stroke="#B8A78F" stroke-width="2" stroke-linecap="round"></path></svg><span style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)">não</span><span>Não tem</span></span></td><td style="padding:12px 10px;border-bottom:1px solid #E3D7C5;background:#fff"><span style="display:flex;align-items:center;gap:8px;font-size:12.5px;line-height:1.35;color:#4E3C35"><svg aria-hidden="true" viewBox="0 0 24 24" style="width:20px;height:20px;flex:0 0 20px"><circle cx="12" cy="12" r="10.5" fill="none" stroke="#5E6545" stroke-width="1.6"></circle><path d="M7 12.5l3.2 3.2L17 9" fill="none" stroke="#5E6545" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"></path></svg><span style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)">sim</span><span>Dose que você calcula</span></span></td></tr>
+          <tr><th scope="row" style="position:sticky;left:0;z-index:1;padding:12px 10px;border-bottom:1px solid #E3D7C5;background:#fff;text-align:left;font-size:12.5px;font-weight:600;color:#412E28">Vitamina B6</th><td style="padding:12px 10px;border-bottom:1px solid #E3D7C5;background:#F7F0E3"><span style="display:flex;align-items:center;gap:8px;font-size:12.5px;line-height:1.35;font-weight:700;color:#412E28"><svg aria-hidden="true" viewBox="0 0 24 24" style="width:20px;height:20px;flex:0 0 20px"><circle cx="12" cy="12" r="11" fill="#5E6545"></circle><path d="M7 12.5l3.2 3.2L17 9" fill="none" stroke="#fff" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"></path></svg><span style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)">sim</span><span>4 mg (308% VD)</span></span></td><td style="padding:12px 10px;border-bottom:1px solid #E3D7C5;background:#fff"><span style="display:flex;align-items:center;gap:8px;font-size:12.5px;line-height:1.35;color:#4E3C35"><svg aria-hidden="true" viewBox="0 0 24 24" style="width:20px;height:20px;flex:0 0 20px"><circle cx="12" cy="12" r="10.5" fill="none" stroke="#CAB99E" stroke-width="1.6"></circle><path d="M8.5 8.5l7 7M15.5 8.5l-7 7" stroke="#B8A78F" stroke-width="2" stroke-linecap="round"></path></svg><span style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)">não</span><span>Não tem</span></span></td><td style="padding:12px 10px;border-bottom:1px solid #E3D7C5;background:#fff"><span style="display:flex;align-items:center;gap:8px;font-size:12.5px;line-height:1.35;color:#4E3C35"><svg aria-hidden="true" viewBox="0 0 24 24" style="width:20px;height:20px;flex:0 0 20px"><circle cx="12" cy="12" r="10.5" fill="none" stroke="#CAB99E" stroke-width="1.6"></circle><path d="M8.5 8.5l7 7M15.5 8.5l-7 7" stroke="#B8A78F" stroke-width="2" stroke-linecap="round"></path></svg><span style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)">não</span><span>Não tem</span></span></td></tr>
+          <tr><th scope="row" style="position:sticky;left:0;z-index:1;padding:12px 10px;border-bottom:1px solid #E3D7C5;background:#fff;text-align:left;font-size:12.5px;font-weight:600;color:#412E28">Ácido fólico</th><td style="padding:12px 10px;border-bottom:1px solid #E3D7C5;background:#F7F0E3"><span style="display:flex;align-items:center;gap:8px;font-size:12.5px;line-height:1.35;font-weight:700;color:#412E28"><svg aria-hidden="true" viewBox="0 0 24 24" style="width:20px;height:20px;flex:0 0 20px"><circle cx="12" cy="12" r="11" fill="#5E6545"></circle><path d="M7 12.5l3.2 3.2L17 9" fill="none" stroke="#fff" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"></path></svg><span style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)">sim</span><span>550 mcg (137% VD)</span></span></td><td style="padding:12px 10px;border-bottom:1px solid #E3D7C5;background:#fff"><span style="display:flex;align-items:center;gap:8px;font-size:12.5px;line-height:1.35;color:#4E3C35"><svg aria-hidden="true" viewBox="0 0 24 24" style="width:20px;height:20px;flex:0 0 20px"><circle cx="12" cy="12" r="10.5" fill="none" stroke="#CAB99E" stroke-width="1.6"></circle><path d="M8.5 8.5l7 7M15.5 8.5l-7 7" stroke="#B8A78F" stroke-width="2" stroke-linecap="round"></path></svg><span style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)">não</span><span>Não tem</span></span></td><td style="padding:12px 10px;border-bottom:1px solid #E3D7C5;background:#fff"><span style="display:flex;align-items:center;gap:8px;font-size:12.5px;line-height:1.35;color:#4E3C35"><svg aria-hidden="true" viewBox="0 0 24 24" style="width:20px;height:20px;flex:0 0 20px"><circle cx="12" cy="12" r="10.5" fill="none" stroke="#CAB99E" stroke-width="1.6"></circle><path d="M8.5 8.5l7 7M15.5 8.5l-7 7" stroke="#B8A78F" stroke-width="2" stroke-linecap="round"></path></svg><span style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)">não</span><span>Não tem</span></span></td></tr>
+          <tr><th scope="row" style="position:sticky;left:0;z-index:1;padding:12px 10px;border-bottom:1px solid #E3D7C5;background:#fff;text-align:left;font-size:12.5px;font-weight:600;color:#412E28">Tudo numa cápsula</th><td style="padding:12px 10px;border-bottom:1px solid #E3D7C5;background:#F7F0E3"><span style="display:flex;align-items:center;gap:8px;font-size:12.5px;line-height:1.35;font-weight:700;color:#412E28"><svg aria-hidden="true" viewBox="0 0 24 24" style="width:20px;height:20px;flex:0 0 20px"><circle cx="12" cy="12" r="11" fill="#5E6545"></circle><path d="M7 12.5l3.2 3.2L17 9" fill="none" stroke="#fff" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"></path></svg><span style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)">sim</span><span>1 cápsula por noite</span></span></td><td style="padding:12px 10px;border-bottom:1px solid #E3D7C5;background:#fff"><span style="display:flex;align-items:center;gap:8px;font-size:12.5px;line-height:1.35;color:#4E3C35"><svg aria-hidden="true" viewBox="0 0 24 24" style="width:20px;height:20px;flex:0 0 20px"><circle cx="12" cy="12" r="10.5" fill="none" stroke="#5E6545" stroke-width="1.6"></circle><path d="M7 12.5l3.2 3.2L17 9" fill="none" stroke="#5E6545" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"></path></svg><span style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)">sim</span><span>1 cápsula</span></span></td><td style="padding:12px 10px;border-bottom:1px solid #E3D7C5;background:#fff"><span style="display:flex;align-items:center;gap:8px;font-size:12.5px;line-height:1.35;color:#4E3C35"><svg aria-hidden="true" viewBox="0 0 24 24" style="width:20px;height:20px;flex:0 0 20px"><circle cx="12" cy="12" r="10.5" fill="none" stroke="#CAB99E" stroke-width="1.6"></circle><path d="M8.5 8.5l7 7M15.5 8.5l-7 7" stroke="#B8A78F" stroke-width="2" stroke-linecap="round"></path></svg><span style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)">não</span><span>3 ou mais por noite</span></span></td></tr>
+          <tr><th scope="row" style="position:sticky;left:0;z-index:1;padding:12px 10px;border-bottom:1px solid #E3D7C5;background:#fff;text-align:left;font-size:12.5px;font-weight:600;color:#412E28">Dose de cada ativo declarada</th><td style="padding:12px 10px;border-bottom:1px solid #E3D7C5;background:#F7F0E3"><span style="display:flex;align-items:center;gap:8px;font-size:12.5px;line-height:1.35;font-weight:700;color:#412E28"><svg aria-hidden="true" viewBox="0 0 24 24" style="width:20px;height:20px;flex:0 0 20px"><circle cx="12" cy="12" r="11" fill="#5E6545"></circle><path d="M7 12.5l3.2 3.2L17 9" fill="none" stroke="#fff" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"></path></svg><span style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)">sim</span><span>Sim, no rótulo</span></span></td><td style="padding:12px 10px;border-bottom:1px solid #E3D7C5;background:#fff"><span style="display:flex;align-items:center;gap:8px;font-size:12.5px;line-height:1.35;color:#4E3C35"><svg aria-hidden="true" viewBox="0 0 24 24" style="width:20px;height:20px;flex:0 0 20px"><circle cx="12" cy="12" r="10.5" fill="none" stroke="#5E6545" stroke-width="1.6"></circle><path d="M7 12.5l3.2 3.2L17 9" fill="none" stroke="#5E6545" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"></path></svg><span style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)">sim</span><span>Só a melatonina</span></span></td><td style="padding:12px 10px;border-bottom:1px solid #E3D7C5;background:#fff"><span style="display:flex;align-items:center;gap:8px;font-size:12.5px;line-height:1.35;color:#4E3C35"><svg aria-hidden="true" viewBox="0 0 24 24" style="width:20px;height:20px;flex:0 0 20px"><circle cx="12" cy="12" r="10.5" fill="none" stroke="#CAB99E" stroke-width="1.6"></circle><path d="M8.5 8.5l7 7M15.5 8.5l-7 7" stroke="#B8A78F" stroke-width="2" stroke-linecap="round"></path></svg><span style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)">não</span><span>Varia por frasco</span></span></td></tr>
+        </tbody>
+      </table>
+    </div>
+    </sc-if>
+    <sc-if value="{{ isMob }}" hint-placeholder-val="{{ true }}">
+      <div role="table" aria-label="Comparação dos ativos do Dream EZ com melatonina isolada e com três frascos" style="background:#fff;border:1px solid #E3D7C5;border-bottom:0;border-radius:16px 16px 0 0;overflow:hidden">
+        <div style="display:grid;grid-template-columns:minmax(0,1fr) 92px 64px 64px;align-items:center;align-items:end">
+          <span></span>
+          <span style="background:#412E28;padding:10px 6px 10px;border-radius:12px 12px 0 0;text-align:center;display:flex;flex-direction:column;align-items:center;gap:6px"><img src="./cmp-dreamez-sf.png" alt="" style="width:60px;height:60px;object-fit:contain;display:block;filter:drop-shadow(0 4px 6px rgba(0,0,0,.25))"><b class="hector" style="font-size:14px;color:#F4EBDD;line-height:1.1">Dream EZ</b><span style="font-size:10.5px;font-weight:700;color:#412E28;background:#CAB99E;border-radius:999px;padding:3px 7px">5 de 5</span></span>
+          <span style="padding:10px 4px;text-align:center;display:flex;flex-direction:column;align-items:center;gap:6px"><img src="./cmp-melatonina-sf.png" alt="" style="width:46px;height:46px;object-fit:contain;display:block;filter:drop-shadow(0 3px 4px rgba(65,46,40,.18))"><b style="font-size:11px;color:#412E28;line-height:1.2">Melatonina isolada</b><span style="font-size:10.5px;color:#6B584F">1 de 5</span></span>
+          <span style="padding:10px 4px;text-align:center;display:flex;flex-direction:column;align-items:center;gap:6px"><img src="./cmp-tres-frascos-sf.png" alt="" style="width:46px;height:46px;object-fit:contain;display:block;filter:drop-shadow(0 3px 4px rgba(65,46,40,.18))"><b style="font-size:11px;color:#412E28;line-height:1.2">Três frascos</b><span style="font-size:10.5px;color:#6B584F">3 de 5</span></span>
+        </div>
+        <div style="display:grid;grid-template-columns:minmax(0,1fr) 92px 64px 64px;align-items:center;border-top:1px solid #E3D7C5">
+          <span style="padding:12px 8px 12px 14px;font-size:13px;font-weight:600;color:#412E28;line-height:1.3">Melatonina</span>
+          <span style="padding:10px 4px;background:#F7F0E3;align-self:stretch;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center"><svg aria-hidden="true" viewBox="0 0 24 24" style="width:22px;height:22px"><circle cx="12" cy="12" r="11" fill="#5E6545"></circle><path d="M7 12.5l3.2 3.2L17 9" fill="none" stroke="#fff" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"></path></svg><span style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)">Dream EZ: tem</span><span style="display:block;font-size:11px;font-weight:700;color:#412E28;margin-top:3px">0,21 mg</span></span>
+          <span style="padding:10px 4px;display:flex;justify-content:center"><svg aria-hidden="true" viewBox="0 0 24 24" style="width:22px;height:22px"><circle cx="12" cy="12" r="10.5" fill="none" stroke="#5E6545" stroke-width="1.6"></circle><path d="M7 12.5l3.2 3.2L17 9" fill="none" stroke="#5E6545" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"></path></svg><span style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)">Melatonina isolada: tem</span></span>
+          <span style="padding:10px 4px;display:flex;justify-content:center"><svg aria-hidden="true" viewBox="0 0 24 24" style="width:22px;height:22px"><circle cx="12" cy="12" r="10.5" fill="none" stroke="#5E6545" stroke-width="1.6"></circle><path d="M7 12.5l3.2 3.2L17 9" fill="none" stroke="#5E6545" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"></path></svg><span style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)">Três frascos: tem</span></span>
+        </div>
+        <div style="display:grid;grid-template-columns:minmax(0,1fr) 92px 64px 64px;align-items:center;border-top:1px solid #E3D7C5">
+          <span style="padding:12px 8px 12px 14px;font-size:13px;font-weight:600;color:#412E28;line-height:1.3">L-triptofano</span>
+          <span style="padding:10px 4px;background:#F7F0E3;align-self:stretch;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center"><svg aria-hidden="true" viewBox="0 0 24 24" style="width:22px;height:22px"><circle cx="12" cy="12" r="11" fill="#5E6545"></circle><path d="M7 12.5l3.2 3.2L17 9" fill="none" stroke="#fff" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"></path></svg><span style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)">Dream EZ: tem</span><span style="display:block;font-size:11px;font-weight:700;color:#412E28;margin-top:3px">220 mg</span></span>
+          <span style="padding:10px 4px;display:flex;justify-content:center"><svg aria-hidden="true" viewBox="0 0 24 24" style="width:22px;height:22px"><circle cx="12" cy="12" r="10.5" fill="none" stroke="#CAB99E" stroke-width="1.6"></circle><path d="M8.5 8.5l7 7M15.5 8.5l-7 7" stroke="#B8A78F" stroke-width="2" stroke-linecap="round"></path></svg><span style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)">Melatonina isolada: não tem</span></span>
+          <span style="padding:10px 4px;display:flex;justify-content:center"><svg aria-hidden="true" viewBox="0 0 24 24" style="width:22px;height:22px"><circle cx="12" cy="12" r="10.5" fill="none" stroke="#5E6545" stroke-width="1.6"></circle><path d="M7 12.5l3.2 3.2L17 9" fill="none" stroke="#5E6545" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"></path></svg><span style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)">Três frascos: tem</span></span>
+        </div>
+        <div style="display:grid;grid-template-columns:minmax(0,1fr) 92px 64px 64px;align-items:center;border-top:1px solid #E3D7C5">
+          <span style="padding:12px 8px 12px 14px;font-size:13px;font-weight:600;color:#412E28;line-height:1.3">Magnésio</span>
+          <span style="padding:10px 4px;background:#F7F0E3;align-self:stretch;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center"><svg aria-hidden="true" viewBox="0 0 24 24" style="width:22px;height:22px"><circle cx="12" cy="12" r="11" fill="#5E6545"></circle><path d="M7 12.5l3.2 3.2L17 9" fill="none" stroke="#fff" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"></path></svg><span style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)">Dream EZ: tem</span><span style="display:block;font-size:11px;font-weight:700;color:#412E28;margin-top:3px">65 mg</span></span>
+          <span style="padding:10px 4px;display:flex;justify-content:center"><svg aria-hidden="true" viewBox="0 0 24 24" style="width:22px;height:22px"><circle cx="12" cy="12" r="10.5" fill="none" stroke="#CAB99E" stroke-width="1.6"></circle><path d="M8.5 8.5l7 7M15.5 8.5l-7 7" stroke="#B8A78F" stroke-width="2" stroke-linecap="round"></path></svg><span style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)">Melatonina isolada: não tem</span></span>
+          <span style="padding:10px 4px;display:flex;justify-content:center"><svg aria-hidden="true" viewBox="0 0 24 24" style="width:22px;height:22px"><circle cx="12" cy="12" r="10.5" fill="none" stroke="#5E6545" stroke-width="1.6"></circle><path d="M7 12.5l3.2 3.2L17 9" fill="none" stroke="#5E6545" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"></path></svg><span style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)">Três frascos: tem</span></span>
+        </div>
+        <div style="display:grid;grid-template-columns:minmax(0,1fr) 92px 64px 64px;align-items:center;border-top:1px solid #E3D7C5">
+          <span style="padding:12px 8px 12px 14px;font-size:13px;font-weight:600;color:#412E28;line-height:1.3">Vitamina B6</span>
+          <span style="padding:10px 4px;background:#F7F0E3;align-self:stretch;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center"><svg aria-hidden="true" viewBox="0 0 24 24" style="width:22px;height:22px"><circle cx="12" cy="12" r="11" fill="#5E6545"></circle><path d="M7 12.5l3.2 3.2L17 9" fill="none" stroke="#fff" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"></path></svg><span style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)">Dream EZ: tem</span><span style="display:block;font-size:11px;font-weight:700;color:#412E28;margin-top:3px">4 mg</span></span>
+          <span style="padding:10px 4px;display:flex;justify-content:center"><svg aria-hidden="true" viewBox="0 0 24 24" style="width:22px;height:22px"><circle cx="12" cy="12" r="10.5" fill="none" stroke="#CAB99E" stroke-width="1.6"></circle><path d="M8.5 8.5l7 7M15.5 8.5l-7 7" stroke="#B8A78F" stroke-width="2" stroke-linecap="round"></path></svg><span style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)">Melatonina isolada: não tem</span></span>
+          <span style="padding:10px 4px;display:flex;justify-content:center"><svg aria-hidden="true" viewBox="0 0 24 24" style="width:22px;height:22px"><circle cx="12" cy="12" r="10.5" fill="none" stroke="#CAB99E" stroke-width="1.6"></circle><path d="M8.5 8.5l7 7M15.5 8.5l-7 7" stroke="#B8A78F" stroke-width="2" stroke-linecap="round"></path></svg><span style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)">Três frascos: não tem</span></span>
+        </div>
+        <div style="display:grid;grid-template-columns:minmax(0,1fr) 92px 64px 64px;align-items:center;border-top:1px solid #E3D7C5">
+          <span style="padding:12px 8px 12px 14px;font-size:13px;font-weight:600;color:#412E28;line-height:1.3">Ácido fólico</span>
+          <span style="padding:10px 4px;background:#F7F0E3;align-self:stretch;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center"><svg aria-hidden="true" viewBox="0 0 24 24" style="width:22px;height:22px"><circle cx="12" cy="12" r="11" fill="#5E6545"></circle><path d="M7 12.5l3.2 3.2L17 9" fill="none" stroke="#fff" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"></path></svg><span style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)">Dream EZ: tem</span><span style="display:block;font-size:11px;font-weight:700;color:#412E28;margin-top:3px">550 mcg</span></span>
+          <span style="padding:10px 4px;display:flex;justify-content:center"><svg aria-hidden="true" viewBox="0 0 24 24" style="width:22px;height:22px"><circle cx="12" cy="12" r="10.5" fill="none" stroke="#CAB99E" stroke-width="1.6"></circle><path d="M8.5 8.5l7 7M15.5 8.5l-7 7" stroke="#B8A78F" stroke-width="2" stroke-linecap="round"></path></svg><span style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)">Melatonina isolada: não tem</span></span>
+          <span style="padding:10px 4px;display:flex;justify-content:center"><svg aria-hidden="true" viewBox="0 0 24 24" style="width:22px;height:22px"><circle cx="12" cy="12" r="10.5" fill="none" stroke="#CAB99E" stroke-width="1.6"></circle><path d="M8.5 8.5l7 7M15.5 8.5l-7 7" stroke="#B8A78F" stroke-width="2" stroke-linecap="round"></path></svg><span style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)">Três frascos: não tem</span></span>
+        </div>
+        <div style="display:grid;grid-template-columns:minmax(0,1fr) 92px 64px 64px;align-items:center;border-top:1px solid #E3D7C5">
+          <span style="padding:12px 8px 12px 14px;font-size:13px;font-weight:600;color:#412E28;line-height:1.3">1 cápsula por noite</span>
+          <span style="padding:10px 4px;background:#F7F0E3;align-self:stretch;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center"><svg aria-hidden="true" viewBox="0 0 24 24" style="width:22px;height:22px"><circle cx="12" cy="12" r="11" fill="#5E6545"></circle><path d="M7 12.5l3.2 3.2L17 9" fill="none" stroke="#fff" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"></path></svg><span style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)">Dream EZ: tem</span></span>
+          <span style="padding:10px 4px;display:flex;justify-content:center"><svg aria-hidden="true" viewBox="0 0 24 24" style="width:22px;height:22px"><circle cx="12" cy="12" r="10.5" fill="none" stroke="#5E6545" stroke-width="1.6"></circle><path d="M7 12.5l3.2 3.2L17 9" fill="none" stroke="#5E6545" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"></path></svg><span style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)">Melatonina isolada: sim</span></span>
+          <span style="padding:10px 4px;display:flex;justify-content:center"><svg aria-hidden="true" viewBox="0 0 24 24" style="width:22px;height:22px"><circle cx="12" cy="12" r="10.5" fill="none" stroke="#CAB99E" stroke-width="1.6"></circle><path d="M8.5 8.5l7 7M15.5 8.5l-7 7" stroke="#B8A78F" stroke-width="2" stroke-linecap="round"></path></svg><span style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)">Três frascos: não</span></span>
+        </div>
+        <div style="display:grid;grid-template-columns:minmax(0,1fr) 92px 64px 64px;align-items:center;border-top:1px solid #E3D7C5">
+          <span style="padding:12px 8px 12px 14px;font-size:13px;font-weight:600;color:#412E28;line-height:1.3">Dose de cada ativo declarada</span>
+          <span style="padding:10px 4px;background:#F7F0E3;align-self:stretch;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center"><svg aria-hidden="true" viewBox="0 0 24 24" style="width:22px;height:22px"><circle cx="12" cy="12" r="11" fill="#5E6545"></circle><path d="M7 12.5l3.2 3.2L17 9" fill="none" stroke="#fff" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"></path></svg><span style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)">Dream EZ: tem</span></span>
+          <span style="padding:10px 4px;display:flex;justify-content:center"><svg aria-hidden="true" viewBox="0 0 24 24" style="width:22px;height:22px"><circle cx="12" cy="12" r="10.5" fill="none" stroke="#5E6545" stroke-width="1.6"></circle><path d="M7 12.5l3.2 3.2L17 9" fill="none" stroke="#5E6545" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"></path></svg><span style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)">Melatonina isolada: só a melatonina</span></span>
+          <span style="padding:10px 4px;display:flex;justify-content:center"><svg aria-hidden="true" viewBox="0 0 24 24" style="width:22px;height:22px"><circle cx="12" cy="12" r="10.5" fill="none" stroke="#CAB99E" stroke-width="1.6"></circle><path d="M8.5 8.5l7 7M15.5 8.5l-7 7" stroke="#B8A78F" stroke-width="2" stroke-linecap="round"></path></svg><span style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)">Três frascos: não</span></span>
+        </div>
+      </div>
+    </sc-if>
+    <div style="margin-top:0;background:#412E28;color:#F4EBDD;border-radius:0 0 18px 18px;padding:{{ cmpCtaPad }};display:grid;grid-template-columns:{{ cmpCtaCols }};gap:20px 32px;align-items:center;position:relative;overflow:hidden"><div style="position:absolute;right:-60px;top:-60px;width:220px;height:220px;border-radius:50%;background:radial-gradient(circle,rgba(181,151,103,.35),rgba(181,151,103,0) 70%)" aria-hidden="true"></div><div style="position:relative"><span class="eb" style="color:#CAB99E">o resumo da comparação</span><b class="hector" style="display:block;font-size:{{ cmpCtaH }};line-height:1.12;color:#fff;margin:8px 0 10px">Mais do que três frascos juntos, numa cápsula só.</b><span style="display:flex;flex-wrap:wrap;gap:6px 16px;font-size:13.5px;color:#E4D8C4"><span style="display:inline-flex;align-items:center;gap:6px"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="#CAB99E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:15px;height:15px;flex:none"><path d="M5 12.5l4.5 4.5L19 7.5"></path></svg>5 ativos com dose declarada</span><span style="display:inline-flex;align-items:center;gap:6px"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="#CAB99E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:15px;height:15px;flex:none"><path d="M5 12.5l4.5 4.5L19 7.5"></path></svg>a partir de R$ 1,33 por noite</span><span style="display:inline-flex;align-items:center;gap:6px"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="#CAB99E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:15px;height:15px;flex:none"><path d="M5 12.5l4.5 4.5L19 7.5"></path></svg>frete grátis e 30 dias de garantia</span></span></div><div style="position:relative;display:flex;flex-direction:column;gap:8px;align-items:stretch"><button onClick="{{ goBuy }}" style="display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:56px;padding:0 30px;border:0;border-radius:999px;background:#F4EBDD;color:#412E28;font-weight:700;font-size:16px;box-shadow:0 8px 24px rgba(0,0,0,.25);white-space:nowrap">Escolher meu kit <span aria-hidden="true" style="font-size:18px">→</span></button><span style="font-size:12px;color:#CAB99E;text-align:center">Leve 3 e economize 33%</span></div></div>
+  </section>
+
+  <!-- BLOCO 4 · O QUE ESPERAR -->
+  <section style="background:#322421;color:#F4EBDD;display:grid;grid-template-columns:{{ ritualCols }};align-items:stretch">
+    <img src="{{ ritualImg }}" alt="Dream EZ na mesa de cabeceira ao lado de um caderno com a rotina da noite: desacelerar as telas, luz mais baixa, tomar 1 cápsula de Dream EZ, leitura leve, dormir no mesmo horário" style="width:100%;height:100%;min-height:{{ ritualImgH2 }};object-fit:cover;object-position:center 62%;display:block">
+    <div style="padding:{{ ritualPad }};display:flex;flex-direction:column;gap:14px;justify-content:center">
+      <span class="eb" style="color:#CAB99E">o que esperar</span>
+      <h2 style="font-size:{{ h2Size }};line-height:1.1;margin:0;color:#fff">Um ritual simples. Uma cápsula por noite.</h2>
+      <p style="margin:0;font-size:15px;line-height:1.6;color:#E4D8C4">Dormir bem é um hábito que se constrói noite após noite. O Dream EZ é a parte medida desse ritual, e o resto são 3 gestos simples que cabem em qualquer rotina:</p>
+      <div style="display:flex;flex-direction:column;gap:12px;margin:4px 0">
+        <div style="display:grid;grid-template-columns:34px minmax(0,1fr);gap:12px;align-items:start"><span class="hector" style="width:34px;height:34px;border-radius:50%;background:#B59767;color:#322421;display:flex;align-items:center;justify-content:center;font-size:16px">1</span><span style="font-size:14.5px;line-height:1.5;color:#E4D8C4"><b style="color:#fff;display:block">Mesmo horário, toda noite</b>Seu corpo aprende a hora de desacelerar.</span></div>
+        <div style="display:grid;grid-template-columns:34px minmax(0,1fr);gap:12px;align-items:start"><span class="hector" style="width:34px;height:34px;border-radius:50%;background:#B59767;color:#322421;display:flex;align-items:center;justify-content:center;font-size:16px">2</span><span style="font-size:14.5px;line-height:1.5;color:#E4D8C4"><b style="color:#fff;display:block">Tela longe, luz baixa</b>Celular fora do alcance e quarto escuro.</span></div>
+        <div style="display:grid;grid-template-columns:34px minmax(0,1fr);gap:12px;align-items:start"><span class="hector" style="width:34px;height:34px;border-radius:50%;background:#B59767;color:#322421;display:flex;align-items:center;justify-content:center;font-size:16px">3</span><span style="font-size:14.5px;line-height:1.5;color:#E4D8C4"><b style="color:#fff;display:block">30 noites seguidas</b>Dê tempo ao hábito. Cada pessoa sente no seu ritmo.</span></div>
+      </div>
+      <div style="border:1px solid rgba(202,185,158,.45);background:rgba(244,235,221,.06);border-radius:14px;padding:14px 16px;display:flex;gap:12px;align-items:center"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#CAB99E" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex:none"><path d="M12 3l7 3v5c0 4.5-3 8.3-7 10-4-1.7-7-5.5-7-10V6l7-3z"></path><path d="M8.8 12.2l2.2 2.2 4.2-4.4"></path></svg><span style="font-size:14px;line-height:1.5;color:#E4D8C4"><b style="color:#fff">Risco zero para testar:</b> se não fizer sentido para você, a garantia de 30 dias cobre a primeira compra, mesmo com o frasco aberto.</span></div>
+    </div>
+  </section>
+
+  <!-- BLOCO 5 · POR QUE 0,21 MG + FÓRMULA -->
+  <section id="formula" style="padding:{{ secPad }};background:#322421;color:#F4EBDD;border-top:1px solid #4A3933">
+    <div style="display:grid;grid-template-columns:{{ whyCols }};gap:{{ whyGap }};align-items:start">
+      <div>
+        <span class="eb" style="color:#CAB99E">a pergunta mais comum</span>
+        <h2 style="font-size:{{ h2Size }};line-height:1.1;margin:10px 0 12px;color:#fff">Por que 0,21 mg e não 3 mg, como lá fora?</h2>
+        <p style="margin:0;font-size:14.5px;line-height:1.6;color:#E4D8C4;max-width:64ch">Porque esse é o limite da Anvisa para melatonina em suplemento para adultos. Acima disso, o produto deixa de ser suplemento. Você vai ver frascos importados com 3, 5 ou 10 mg; aqui, seguimos a regra brasileira e declaramos a dose.</p>
+      </div>
+      <div>
+        <b class="hector" style="display:block;font-size:20px;color:#fff;margin-bottom:4px">O que tem em cada cápsula</b>
+        <span style="display:block;font-size:12.5px;color:#CAB99E;margin-bottom:10px">Porção: 1 cápsula (0,5 g).</span>
+        <span style="display:{{ carHint }};align-items:center;gap:6px;font-size:12px;color:#CAB99E;margin:0 0 10px">arraste para o lado <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:14px;height:14px"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></span>
+        <div id="atv-grid" class="car" data-n="6" style="display:grid;grid-template-columns:{{ colsAtv }};grid-auto-columns:{{ atvAuto }};gap:12px;grid-auto-flow:{{ carFlow }};overflow-x:{{ carOv }};scroll-snap-type:{{ carSnap }};margin:{{ carM }};padding:{{ carP }};scroll-padding-left:{{ carSp }};scrollbar-width:none;-webkit-overflow-scrolling:touch">
+          <sc-for list="{{ ativosCar }}" as="a" hint-placeholder-count="6">
+            <div class="atv-item" style="display:flex;flex-direction:column;gap:8px;scroll-snap-align:start;transition-delay:{{ a.rd }}">
+              <div class="atv-c" style="animation-delay:{{ a.fd }}"><div class="atv-halo" style="animation-delay:{{ a.bd }}"></div><div class="atv-wrap"><img class="atv-img" src="{{ a.img }}" alt="{{ a.alt }}" style="width:100%;aspect-ratio:1/1;object-fit:cover;border-radius:50%;display:block;animation-delay:{{ a.bd }}"></div><svg class="atv-ring" viewBox="0 0 100 100" aria-hidden="true"><circle cx="50" cy="50" r="49.5" pathLength="100" style="transition-delay:{{ a.rd2 }}"></circle></svg></div>
+              <div style="display:flex;justify-content:space-between;align-items:baseline;gap:6px;border-top:1px solid #5A463D;padding-top:8px"><b style="font-size:14px;color:#fff">{{ a.n }}</b></div>
+              <span style="font-size:14px;font-weight:600;color:#E8D5B0">{{ a.q }}</span>
+              <span style="font-size:12.5px;line-height:1.45;color:#E4D8C4">{{ a.f }}</span>
+            </div>
+          </sc-for>
+        </div>
+        <p style="font-size:12.5px;color:#CAB99E;margin:12px 0 0;line-height:1.55"><b style="color:#F4EBDD">Ingredientes:</b> L-triptofano, óxido de magnésio, cloridrato de piridoxina, ácido fólico, melatonina, celulose microcristalina, amido, dióxido de silício. Cápsula vegetal: celulose, dióxido de titânio e água filtrada. Não contém glúten. Sem açúcar.</p>
+      </div>
+    </div>
+    <div style="margin-top:36px;background:#F4EBDD;color:#412E28;border-radius:18px;padding:{{ cmpCtaPad }};display:grid;grid-template-columns:{{ cmpCtaCols }};gap:20px 32px;align-items:center"><div><div style="display:flex;align-items:center;gap:12px;margin-bottom:12px"><span style="display:flex"><img src="./ativo-melatonina.png" alt="" style="width:34px;height:34px;border-radius:50%;object-fit:cover;border:2px solid #F4EBDD;margin-left:0;display:block"><img src="./ativo-l-triptofano.png" alt="" style="width:34px;height:34px;border-radius:50%;object-fit:cover;border:2px solid #F4EBDD;margin-left:-10px;display:block"><img src="./ativo-magnesio.png" alt="" style="width:34px;height:34px;border-radius:50%;object-fit:cover;border:2px solid #F4EBDD;margin-left:-10px;display:block"><img src="./ativo-vitamina-b6.png" alt="" style="width:34px;height:34px;border-radius:50%;object-fit:cover;border:2px solid #F4EBDD;margin-left:-10px;display:block"><img src="./ativo-acido-folico.png" alt="" style="width:34px;height:34px;border-radius:50%;object-fit:cover;border:2px solid #F4EBDD;margin-left:-10px;display:block"></span><span class="eb" style="color:#8F513D">5 ativos · 1 cápsula</span></div><b class="hector" style="display:block;font-size:{{ cmpCtaH }};line-height:1.12;color:#412E28;margin:0 0 6px">Sua fórmula da noite completa, num frasco só.</b><span style="font-size:14px;color:#4E3C35">A partir de R$ 1,33 por noite, com frete grátis e 30 dias de garantia.</span></div><div style="display:flex;flex-direction:column;gap:8px;align-items:stretch"><button onClick="{{ goBuy }}" style="display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:56px;padding:0 30px;border:0;border-radius:999px;background:#412E28;color:#F4EBDD;font-weight:700;font-size:16px;box-shadow:0 8px 24px rgba(0,0,0,.25);white-space:nowrap">Escolher meu kit <span aria-hidden="true" style="font-size:18px">→</span></button><span style="font-size:12px;color:#6B584F;text-align:center">Leve 3 e economize 33%</span></div></div>
+  </section>
+
+  <!-- COMO USAR (timeline + cápsula que se desfaz) -->
+  <section id="uso" style="padding:{{ secPad }};background:#fff">
+    <h2 style="font-size:{{ h2Size }};line-height:1.1;margin:0 0 {{ usoH2Mb }};text-align:left">Como usar</h2>
+    <div style="display:grid;grid-template-columns:{{ usoCols }};gap:{{ usoGap }};align-items:start">
+      <div>
+      <div style="position:relative">
+        <span aria-hidden="true" style="position:absolute;left:21px;top:22px;bottom:22px;width:2px;border-radius:2px;background:#EFE5D3"></span>
+        <span id="uso-line" aria-hidden="true" style="position:absolute;left:21px;top:22px;width:2px;height:0;max-height:calc(100% - 44px);border-radius:2px;background:linear-gradient(#CAB99E,#B59767)"></span>
+        <ol style="list-style:none;margin:0;padding:0">
+          <li data-uso-step="0" style="position:relative;display:grid;grid-template-columns:44px minmax(0,1fr);gap:0 18px;padding-bottom:{{ stepGap }};transition:opacity .4s">
+            <span data-uso-dot="0" aria-hidden="true" style="position:relative;z-index:1;width:44px;height:44px;border-radius:50%;background:#fff;border:1.5px solid #E3D7C5;color:#B59767;display:flex;align-items:center;justify-content:center;box-shadow:0 0 0 6px #fff;transition:background .35s,border-color .35s,color .35s,transform .35s"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" style="width:20px;height:20px"><rect x="3.5" y="8.5" width="17" height="7" rx="3.5" transform="rotate(-35 12 12)"></rect><path d="M10 9.1L14 14.9"></path></svg></span>
+            <span style="display:flex;flex-direction:column;gap:4px;padding-top:2px"><span class="eb" style="font-size:10.5px;color:#8F513D">passo 01</span><b class="hector" style="font-size:{{ h3Size }};line-height:1.15">Quanto</b><span style="font-size:14.5px;color:#4E3C35;line-height:1.55;max-width:38ch"><b style="color:#412E28">1 cápsula</b> por noite. Não exceder uma por dia.</span></span>
+          </li>
+          <li data-uso-step="1" style="position:relative;display:grid;grid-template-columns:44px minmax(0,1fr);gap:0 18px;padding-bottom:{{ stepGap }};transition:opacity .4s">
+            <span data-uso-dot="1" aria-hidden="true" style="position:relative;z-index:1;width:44px;height:44px;border-radius:50%;background:#fff;border:1.5px solid #E3D7C5;color:#B59767;display:flex;align-items:center;justify-content:center;box-shadow:0 0 0 6px #fff;transition:background .35s,border-color .35s,color .35s,transform .35s"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" style="width:20px;height:20px"><path d="M20 14.5A8 8 0 0 1 9.5 4a7.5 7.5 0 1 0 10.5 10.5z"></path></svg></span>
+            <span style="display:flex;flex-direction:column;gap:4px;padding-top:2px"><span class="eb" style="font-size:10.5px;color:#8F513D">passo 02</span><b class="hector" style="font-size:{{ h3Size }};line-height:1.15">Quando</b><span style="font-size:14.5px;color:#4E3C35;line-height:1.55;max-width:38ch"><b style="color:#412E28">30 minutos antes de dormir</b>, sempre no mesmo horário.</span></span>
+          </li>
+          <li data-uso-step="2" style="position:relative;display:grid;grid-template-columns:44px minmax(0,1fr);gap:0 18px;padding-bottom:{{ stepGap }};transition:opacity .4s">
+            <span data-uso-dot="2" aria-hidden="true" style="position:relative;z-index:1;width:44px;height:44px;border-radius:50%;background:#fff;border:1.5px solid #E3D7C5;color:#B59767;display:flex;align-items:center;justify-content:center;box-shadow:0 0 0 6px #fff;transition:background .35s,border-color .35s,color .35s,transform .35s"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" style="width:20px;height:20px"><path d="M12 3.5c3 3.7 5.5 6.9 5.5 10a5.5 5.5 0 0 1-11 0c0-3.1 2.5-6.3 5.5-10z"></path></svg></span>
+            <span style="display:flex;flex-direction:column;gap:4px;padding-top:2px"><span class="eb" style="font-size:10.5px;color:#8F513D">passo 03</span><b class="hector" style="font-size:{{ h3Size }};line-height:1.15">Como</b><span style="font-size:14.5px;color:#4E3C35;line-height:1.55;max-width:38ch">Com <b style="color:#412E28">um copo de água</b>. A cápsula é vegetal, de celulose.</span></span>
+          </li>
+          <li data-uso-step="3" style="position:relative;display:grid;grid-template-columns:44px minmax(0,1fr);gap:0 18px;padding-bottom:{{ stepLast }};transition:opacity .4s">
+            <span data-uso-dot="3" aria-hidden="true" style="position:relative;z-index:1;width:44px;height:44px;border-radius:50%;background:#fff;border:1.5px solid #E3D7C5;color:#B59767;display:flex;align-items:center;justify-content:center;box-shadow:0 0 0 6px #fff;transition:background .35s,border-color .35s,color .35s,transform .35s"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" style="width:20px;height:20px"><rect x="4" y="5.5" width="16" height="14.5" rx="2.5"></rect><path d="M4 10h16M8.5 3.5v4M15.5 3.5v4"></path></svg></span>
+            <span style="display:flex;flex-direction:column;gap:4px;padding-top:2px"><span class="eb" style="font-size:10.5px;color:#8F513D">passo 04</span><b class="hector" style="font-size:{{ h3Size }};line-height:1.15">Por quanto tempo</b><span style="font-size:14.5px;color:#4E3C35;line-height:1.55;max-width:38ch">Cada frasco rende <b style="color:#412E28">60 noites</b>. Dê ao menos 30 noites seguidas para o hábito se firmar.</span></span>
+          </li>
+        </ol>
+      </div>
+      <div style="margin-top:28px;display:grid;grid-template-columns:22px minmax(0,1fr);gap:10px;background:#FAF5EC;border:1px solid #EFE5D3;border-radius:12px;padding:14px 16px;font-size:12.5px;line-height:1.55;color:#6B584F"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="#8F513D" stroke-width="1.7" stroke-linecap="round" style="width:20px;height:20px"><circle cx="12" cy="12" r="9"></circle><path d="M12 11v5.5M12 7.6v.4"></path></svg><span><b style="color:#412E28">Atenção:</b> não recomendado para quem vai exercer atividades que exijam atenção constante depois do consumo. Pessoas com enfermidades ou em uso de medicamentos devem consultar um médico antes.</span></div>
+      </div>
+      <div style="display:grid;grid-template-columns:minmax(0,1.35fr) minmax(0,1fr);gap:10px">
+        <div style="grid-column:1/-1;position:relative;border-radius:14px;overflow:hidden;background:#C8C5C1;aspect-ratio:16/9">
+          <video id="uso-vid" src="./capsula-loop.mp4" poster="./capsula-loop.jpg" muted loop playsInline preload="auto" aria-label="Cápsula de Dream EZ em movimento" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block"></video>
+        </div>
+        <img src="./uso-verso.jpg" alt="Verso do frasco com a tabela nutricional" style="width:100%;aspect-ratio:326/242;object-fit:cover;border-radius:14px;display:block">
+        <img src="./uso-mao.jpg" alt="Mão segurando um frasco de Dream EZ" style="width:100%;aspect-ratio:1/1;object-fit:cover;border-radius:50%;display:block;align-self:center">
+      </div>
+    </div>
+  </section>
+
+  <!-- BLOCO 7 · AVALIAÇÕES -->
+  <section id="avaliacoes" style="padding:{{ secPad }};background:#F4EBDD">
+    <div style="display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:12px 20px;margin-bottom:16px">
+      <div>
+        <h2 style="font-size:{{ h2Size }};line-height:1.1;margin:0 0 6px">O que dizem os clientes</h2>
+        <span style="display:inline-flex;align-items:center;gap:8px;font-size:14px;color:#4E3C35"><span style="color:#B59767;letter-spacing:2px;font-size:16px">★★★★★</span><b style="color:#412E28">5,0</b> · baseado em 4 avaliações</span>
+      </div>
+      <a href="#avaliacoes" style="display:inline-flex;align-items:center;min-height:44px;padding:0 18px;border-radius:999px;border:1.5px solid #412E28;color:#412E28;text-decoration:none;font-weight:600;font-size:13.5px;white-space:nowrap">Avaliar meu Dream EZ</a>
+    </div>
+    <span style="display:{{ carHint }};align-items:center;gap:6px;font-size:12px;color:#6B584F;margin:0 0 10px">arraste para o lado <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:14px;height:14px"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></span>
+    <div class="car" data-n="4" style="display:grid;grid-template-columns:{{ colsRev }};grid-auto-columns:{{ revAuto }};gap:{{ revGap }};grid-auto-flow:{{ carFlow }};overflow-x:{{ carOv }};scroll-snap-type:{{ carSnap }};margin:{{ carM }};padding:{{ carP }};scroll-padding-left:{{ carSp }};scrollbar-width:none;-webkit-overflow-scrolling:touch">
+      <sc-for list="{{ revsCar }}" as="r" hint-placeholder-count="4">
+        <div class="rev-item" style="background:#fff;border:1px solid #E3D7C5;border-radius:14px;padding:18px;display:flex;flex-direction:column;gap:8px;scroll-snap-align:start;transition-delay:{{ r.rd }};animation-delay:{{ r.fd }}">
+          <span style="color:#B59767;font-size:14px;letter-spacing:2px">★★★★★</span>
+          <b class="hector" style="font-size:17px;line-height:1.2">{{ r.t }}</b>
+          <p style="margin:0;font-size:13.5px;line-height:1.55;color:#4E3C35;flex:1">{{ r.x }}</p>
+          <span style="font-size:12px;color:#6B584F;border-top:1px solid #E3D7C5;padding-top:8px"><b style="color:#412E28">{{ r.a }}</b></span>
+        </div>
+      </sc-for>
+    </div>
+  </section>
+
+  <!-- CTA FINAL -->
+  <section style="background:#412E28;color:#F4EBDD;display:grid;grid-template-columns:{{ ctaCols }};align-items:stretch">
+    <img src="./arte-noite-30min.jpg" alt="Dream EZ na mesa de cabeceira com abajur e copo d'água: sua noite começa 30 minutos antes de deitar" style="width:100%;height:100%;min-height:{{ ritualImgH }};object-fit:cover;display:block">
+    <div style="padding:{{ ctaPad }};display:flex;flex-direction:column;justify-content:center;gap:14px;text-align:{{ ctaAlign }}">
+      <span class="eb" style="color:#CAB99E">60 noites por frasco</span>
+      <h2 style="font-size:{{ heroSize }};line-height:1.05;margin:0;color:#fff;text-wrap:balance">Revitalize seu sono e tenha dias com mais disposição.</h2>
+      <p style="margin:0;font-size:15px;color:#E4D8C4;max-width:46ch">A partir de R$ 1,33 por noite levando 3 frascos. Frete grátis para todo o Brasil e 30 dias de garantia na primeira compra.</p>
+      <a href="#topo" style="align-self:{{ ctaSelf }};display:inline-flex;align-items:center;min-height:54px;padding:0 28px;border-radius:999px;background:#F4EBDD;color:#412E28;text-decoration:none;font-weight:600;font-size:15.5px">Adicionar ao carrinho</a>
+    </div>
+  </section>
+
+  <!-- FAQ (acima do rodapé) -->
+  <section id="duvidas" style="padding:{{ faqPad }};background:#FAF5EC">
+    <div style="max-width:880px;margin:0 auto;background:#fff;border:1px solid #E3D7C5;border-radius:18px;overflow:hidden">
+      <button onClick="{{ faqOpenToggle }}" aria-expanded="{{ faqOpenAria }}" aria-controls="faq-list" style="width:100%;display:grid;grid-template-columns:46px minmax(0,1fr) 36px;gap:14px;align-items:center;text-align:left;border:0;background:none;padding:18px 20px;cursor:pointer;color:#412E28">
+        <span aria-hidden="true" style="width:46px;height:46px;border-radius:50%;background:#F4EBDD;color:#8F513D;display:flex;align-items:center;justify-content:center"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" style="width:22px;height:22px"><circle cx="12" cy="12" r="9"></circle><path d="M9.6 9.3a2.5 2.5 0 0 1 4.8.9c0 1.7-2.4 2.1-2.4 3.6M12 16.9v.2"></path></svg></span>
+        <span><b class="hector" style="display:block;font-size:{{ h3Size }};line-height:1.15">Dúvidas frequentes</b><span style="display:block;margin-top:2px;font-size:13px;color:#6B584F">{{ faqSub }}</span></span>
+        <span aria-hidden="true" style="width:36px;height:36px;border-radius:50%;background:#412E28;color:#F4EBDD;display:flex;align-items:center;justify-content:center;transition:transform .3s;transform:rotate({{ faqRot }})"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" style="width:16px;height:16px"><path d="M6 9l6 6 6-6"></path></svg></span>
+      </button>
+      <sc-if value="{{ faqOpen }}" hint-placeholder-val="{{ false }}">
+      <div id="faq-list" style="border-top:1px solid #EFE5D3;padding:16px 20px 20px;display:flex;flex-direction:column;gap:10px;background:#FFFCF7">
+        <sc-for list="{{ faqShow }}" as="q" hint-placeholder-count="5">
+          <details class="fq" style="background:#fff;border:1px solid #E3D7C5;border-radius:12px;overflow:hidden">
+            <summary style="cursor:pointer;display:flex;align-items:center;justify-content:space-between;gap:14px;padding:16px 18px;font-weight:600;font-size:14.5px;color:#412E28;line-height:1.35">{{ q.q }}<span class="fq-i" aria-hidden="true" style="flex:0 0 28px;width:28px;height:28px;border-radius:50%;background:#EFE5D3;color:#412E28;display:flex;align-items:center;justify-content:center;transition:transform .25s,background .25s"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" style="width:14px;height:14px"><path d="M12 5v14M5 12h14"></path></svg></span></summary>
+            <div style="padding:0 18px 16px;font-size:14px;line-height:1.6;color:#4E3C35">{{ q.a }}</div>
+          </details>
+        </sc-for>
+        <sc-if value="{{ faqHasMore }}" hint-placeholder-val="{{ true }}">
+          <button onClick="{{ faqToggle }}" style="align-self:flex-start;margin-top:4px;border:0;background:none;padding:6px 2px;font-size:13.5px;font-weight:600;color:#412E28;text-decoration:underline;text-underline-offset:3px">{{ faqBtn }}</button>
+        </sc-if>
+        <div style="display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:10px;margin-top:6px;padding-top:14px;border-top:1px dashed #E3D7C5"><span style="font-size:13.5px;color:#4E3C35">Não achou a sua pergunta?</span><a href="#" style="display:inline-flex;align-items:center;gap:8px;min-height:44px;padding:0 18px;border-radius:999px;border:1.5px solid #412E28;color:#412E28;text-decoration:none;font-weight:600;font-size:13.5px"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" style="width:17px;height:17px"><path d="M20 11.5a8.5 8.5 0 0 1-12.6 7.4L3 20l1.2-4.2A8.5 8.5 0 1 1 20 11.5z"></path></svg>Falar no WhatsApp</a></div>
+      </div>
+      </sc-if>
+    </div>
+  </section>
+
+  <div style="background:#322421;color:#CAB99E;padding:28px {{ crumbPad }} 90px;font-size:12.5px;display:grid;gap:8px">
+    <img src="./logo-4life-creme.png" alt="4Life" style="height:30px;width:auto;display:block;margin-bottom:6px;justify-self:start">
+    <span>Trocas e devoluções · Frete e entrega · Rastrear pedido · WhatsApp</span>
+    <span style="color:#B8A78F">4Life Nutrition · CNPJ 59.031.045/0001-76 · Guarapari-ES</span>
+    <span style="color:#B8A78F;font-size:11.5px">Este produto não é um medicamento. Não exceder a recomendação diária de consumo indicada na embalagem.</span>
+  </div>
+
+  <sc-if value="{{ zoomOpen }}" hint-placeholder-val="{{ false }}">
+    <div role="dialog" aria-modal="true" aria-label="Foto ampliada" style="position:fixed;inset:0;z-index:190;background:rgba(32,23,21,.94);display:flex;align-items:center;justify-content:center;padding:56px 12px">
+      <img src="{{ zImg }}" alt="{{ zAlt }}" style="max-width:min(900px,100%);max-height:100%;object-fit:contain;border-radius:12px;background:#fff;display:block">
+      <button onClick="{{ zClose }}" aria-label="Fechar" style="position:absolute;top:12px;right:12px;width:40px;height:40px;border-radius:50%;border:0;background:#F4EBDD;color:#412E28;font-size:22px;line-height:1">×</button>
+      <button onClick="{{ zPrev }}" aria-label="Foto anterior" style="position:absolute;left:10px;top:50%;transform:translateY(-50%);width:42px;height:42px;border-radius:50%;border:0;background:#F4EBDD;color:#412E28;font-size:20px">‹</button>
+      <button onClick="{{ zNext }}" aria-label="Próxima foto" style="position:absolute;right:10px;top:50%;transform:translateY(-50%);width:42px;height:42px;border-radius:50%;border:0;background:#F4EBDD;color:#412E28;font-size:20px">›</button>
+      <span style="position:absolute;bottom:16px;left:0;right:0;text-align:center;color:#CAB99E;font-size:13px">{{ zCount }}</span>
+    </div>
+  </sc-if>
+
+  <sc-if value="{{ cartOpen }}" hint-placeholder-val="{{ false }}">
+    <div style="position:fixed;inset:0;z-index:180;display:flex;justify-content:flex-end">
+      <button onClick="{{ closeCart }}" aria-label="Fechar carrinho" style="position:absolute;inset:0;border:0;background:rgba(50,36,33,.55);padding:0"></button>
+      <div role="dialog" aria-modal="true" aria-label="Seu carrinho" style="position:relative;width:min(400px,92vw);height:100%;background:#FAF5EC;display:flex;flex-direction:column;box-shadow:-12px 0 40px rgba(50,36,33,.25);animation:dzSlide .28s ease-out">
+        <div style="display:flex;align-items:center;justify-content:space-between;padding:20px 20px 16px;background:#412E28;color:#F4EBDD">
+          <b class="hector" style="font-size:24px">Seu carrinho</b>
+          <button onClick="{{ closeCart }}" aria-label="Fechar" style="width:36px;height:36px;border-radius:50%;border:1px solid #6B584F;background:transparent;color:#F4EBDD;font-size:18px;line-height:1">×</button>
+        </div>
+        <div style="flex:1;overflow-y:auto;padding:16px 20px;display:flex;flex-direction:column;gap:12px">
+          <sc-if value="{{ cartEmpty }}" hint-placeholder-val="{{ false }}">
+            <div style="text-align:center;padding:40px 10px;color:#6B584F;font-size:14px">Seu carrinho está vazio.<br><button onClick="{{ closeCart }}" style="margin-top:14px;border:1.5px solid #412E28;border-radius:999px;background:#fff;padding:10px 18px;font-weight:600;font-size:13px">Escolher meu Dream EZ</button></div>
+          </sc-if>
+          <sc-for list="{{ cartItems }}" as="c" hint-placeholder-count="1">
+            <div style="display:grid;grid-template-columns:68px minmax(0,1fr) auto;gap:12px;align-items:center;background:#fff;border:1px solid #E3D7C5;border-radius:12px;padding:10px">
+              <img src="{{ c.img }}" alt="" style="width:68px;height:68px;object-fit:cover;border-radius:8px;display:block;background:#F4F2EF">
+              <span style="display:flex;flex-direction:column;gap:2px;min-width:0">
+                <b style="font-size:14px;color:#412E28;line-height:1.25">{{ c.n }}</b>
+                <span style="font-size:12px;color:#8F513D">{{ c.sub }}</span>
+                <span style="font-size:12px;color:#6B584F"><s>{{ c.de }}</s> <b style="font-size:14px;color:#412E28">{{ c.pt }}</b></span>
+              </span>
+              <span style="display:flex;flex-direction:column;align-items:flex-end;gap:6px">
+                <span style="display:inline-flex;align-items:center;border:1px solid #CAB99E;border-radius:999px;overflow:hidden">
+                  <button onClick="{{ c.dec }}" aria-label="Diminuir quantidade" style="width:30px;height:30px;border:0;background:#fff;font-size:16px;line-height:1">−</button>
+                  <b style="min-width:20px;text-align:center;font-size:13px">{{ c.q }}</b>
+                  <button onClick="{{ c.inc }}" aria-label="Aumentar quantidade" style="width:30px;height:30px;border:0;background:#fff;font-size:16px;line-height:1">+</button>
+                </span>
+                <button onClick="{{ c.rm }}" style="border:0;background:none;padding:0;font-size:11.5px;color:#6B584F;text-decoration:underline">remover</button>
+              </span>
+            </div>
+          </sc-for>
+          <sc-if value="{{ hasUps }}" hint-placeholder-val="{{ true }}">
+            <span class="eb" style="font-size:10.5px;color:#6B584F;margin-top:6px">Aproveite junto com o Dream EZ</span>
+          </sc-if>
+          <sc-for list="{{ ups }}" as="u" hint-placeholder-count="2">
+            <div style="display:grid;grid-template-columns:68px minmax(0,1fr);gap:12px;align-items:center;background:#F4EBDD;border-radius:12px;padding:12px">
+              <img src="{{ u.img }}" alt="" style="width:68px;height:68px;object-fit:cover;border-radius:8px;display:block;background:#fff">
+              <span style="display:flex;flex-direction:column;gap:4px;min-width:0">
+                <span class="eb" style="font-size:9.5px;color:#5E6545">só com o Dream EZ</span>
+                <b style="font-size:14px;color:#412E28;line-height:1.25">{{ u.t }}</b>
+                <span style="font-size:12px;color:#6B584F"><s>{{ u.de }}</s> <b style="font-size:14px;color:#412E28">{{ u.pt }}</b></span>
+                <button onClick="{{ u.add }}" style="align-self:flex-start;margin-top:2px;border:0;border-radius:999px;background:#412E28;color:#F4EBDD;padding:7px 14px;font-size:12.5px;font-weight:600">+ Adicionar</button>
+              </span>
+            </div>
+          </sc-for>
+        </div>
+        <div style="padding:16px 20px 20px;background:#fff;border-top:1px solid #E3D7C5;display:flex;flex-direction:column;gap:6px">
+          <div style="display:flex;justify-content:space-between;align-items:baseline"><b style="font-size:16px">Total</b><b style="font-size:20px">{{ cartTotal }}</b></div>
+          <span style="font-size:12px;color:#5E6545;font-weight:600">Frete grátis para todo o Brasil · até 6x sem juros</span>
+          <a href="{{ checkoutUrl }}" target="_top" onClick="{{ checkout }}" style="display:flex;align-items:center;justify-content:center;min-height:52px;margin-top:6px;border-radius:999px;background:#412E28;color:#F4EBDD;text-decoration:none;font-weight:600;font-size:15.5px">Finalizar compra</a>
+          <button onClick="{{ closeCart }}" style="border:0;background:none;font-size:12.5px;color:#6B584F;text-decoration:underline;padding:6px">Continuar comprando</button>
+        </div>
+      </div>
+    </div>
+  </sc-if>
+
+  <sc-if value="{{ stOpen }}" hint-placeholder-val="{{ false }}">
+    <div role="dialog" aria-modal="true" aria-label="Vídeos de quem já experimentou" style="position:fixed;inset:0;z-index:200;background:rgba(20,14,12,.92);display:flex;align-items:center;justify-content:center;padding:16px">
+      <div style="position:relative;height:min(86vh,760px);aspect-ratio:9/16;max-width:100%;border-radius:16px;overflow:hidden;background:#000">
+        <video src="{{ stSrc }}" poster="{{ stPoster }}" autoPlay playsInline onEnded="{{ stNext }}" onTimeUpdate="{{ stTime }}" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block"></video>
+        <div style="position:absolute;left:10px;right:10px;top:10px;display:flex;gap:4px;z-index:3">
+          <sc-for list="{{ stBars }}" as="b" hint-placeholder-count="5">
+            <span style="flex:1;height:3px;border-radius:2px;background:rgba(255,255,255,.35);overflow:hidden;display:block"><i style="display:block;height:100%;width:{{ b.w }};background:#fff"></i></span>
+          </sc-for>
+        </div>
+        <div style="position:absolute;left:12px;right:12px;top:22px;display:flex;align-items:center;gap:8px;z-index:3;color:#fff">
+          <img src="./logo-4life-creme.png" alt="" style="height:16px;width:auto;display:block">
+          <b style="font-size:13px">{{ stName }}</b>
+          <button onClick="{{ stClose }}" aria-label="Fechar" style="margin-left:auto;border:0;background:none;color:#fff;font-size:24px;line-height:1;padding:4px 6px">×</button>
+        </div>
+        <button onClick="{{ stPrev }}" aria-label="Vídeo anterior" style="position:absolute;left:0;top:60px;bottom:90px;width:30%;border:0;background:transparent;z-index:2"></button>
+        <button onClick="{{ stNext }}" aria-label="Próximo vídeo" style="position:absolute;right:0;top:60px;bottom:90px;width:30%;border:0;background:transparent;z-index:2"></button>
+        <a href="#topo" onClick="{{ stClose }}" style="position:absolute;left:12px;right:12px;bottom:14px;z-index:3;display:flex;align-items:center;justify-content:center;min-height:46px;border-radius:999px;background:#F4EBDD;color:#412E28;text-decoration:none;font-weight:600;font-size:14px">Quero meu Dream EZ</a>
+      </div>
+    </div>
+  </sc-if>
+
+  <div aria-hidden="{{ barHidden }}" style="position:fixed;bottom:0;left:50%;width:{{ frameW }};max-width:100%;z-index:150;background:#fff;border-top:1px solid #E3D7C5;border-radius:16px 16px 0 0;display:grid;grid-template-columns:{{ stickyCols }};gap:10px;align-items:center;padding:{{ stickyPad }};box-shadow:0 -6px 24px rgba(65,46,40,.14);transform:translate(-50%,{{ barY }});transition:transform .3s ease;visibility:{{ barVis }}">
+    <div style="display:flex;align-items:center;gap:10px;min-width:0"><img src="./dream-ez-frasco.jpg" alt="Frasco de Dream EZ" style="width:46px;height:46px;flex:0 0 46px;object-fit:cover;border-radius:10px;border:1px solid #E3D7C5;background:#fff;display:block"><span style="display:flex;flex-direction:column;font-size:12px;line-height:1.35;min-width:0"><b style="font-size:13px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">{{ sName }}</b><span style="color:#6B584F">{{ sPrice }}</span></span></div>
+    <button onClick="{{ addBag }}" style="min-height:46px;border-radius:999px;border:0;background:#412E28;color:#F4EBDD;font-weight:600;font-size:14px">{{ sCta }}</button>
+  </div>
+</div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  state = { faqOpen: false, vp: 'mobile', gi: 0, lad: 'dois', bump: false, cart: [], cartOpen: false, faqAll: false, zi: -1, showBar: false, flash: false, now: Date.now(), st: -1, stP: 0, seen: [] };
+  componentDidMount() {
+    this.fitVp = () => { const v = (window.innerWidth || 0) >= 1024 ? 'desktop' : 'mobile'; if (v !== this.state.vp) this.setState({ vp: v }); };
+    this.fitVp();
+    window.addEventListener('resize', this.fitVp);
+    this.raf = 0;
+    this.onScroll = () => { if (!this.raf) this.raf = requestAnimationFrame(() => { this.raf = 0; this.tick(); }); };
+    window.addEventListener('scroll', this.onScroll, true);
+    window.addEventListener('resize', this.onScroll);
+    this.onScroll();
+    this.onCarHold = e => { const c = e.target && e.target.closest ? e.target.closest('.car') : null; if (c) { c.dataset.hold = String(Date.now()); if (c._raf) c._stop = true; } };
+    document.addEventListener('pointerdown', this.onCarHold, true);
+    document.addEventListener('touchstart', this.onCarHold, { capture: true, passive: true });
+    document.addEventListener('wheel', this.onCarHold, { capture: true, passive: true });
+    this.carT = setInterval(() => this.carStep(), 3500);
+    this.onCarScroll = e => { const c = e.target; if (!c || !c.classList || !c.classList.contains('car') || c._raf) return; clearTimeout(c._wt); c._wt = setTimeout(() => this.carWrap(c), 140); };
+    document.addEventListener('scroll', this.onCarScroll, true);
+    setTimeout(() => document.querySelectorAll('.car').forEach(c => { if (c.scrollWidth > c.clientWidth + 8) this.carInit(c); }), 300);
+  }
+  carStep() {
+    try { if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) return; } catch (e) {}
+    const vh = window.innerHeight || 800;
+    document.querySelectorAll('.car').forEach(c => {
+      if (c.scrollWidth <= c.clientWidth + 8) return;
+      if (Date.now() - (+c.dataset.hold || 0) < 7000) return;
+      const r = c.getBoundingClientRect(); if (r.bottom < 0 || r.top > vh) return;
+      const it = c.children[0]; if (!it) return;
+      const gap = parseFloat(getComputedStyle(c).columnGap) || 0;
+      const step = it.getBoundingClientRect().width + gap, max = c.scrollWidth - c.clientWidth;
+      this.carInit(c);
+      const nx = Math.min(max, c.scrollLeft + step);
+      this.glide(c, nx);
+    });
+  }
+  carSet(c) { const n = +c.dataset.n || 0, ch = c.children; if (!n || ch.length < n * 3) return 0; return ch[n].offsetLeft - ch[0].offsetLeft; }
+  carInit(c) { if (c.dataset.loop) return; const w = this.carSet(c); if (!w) return; c.dataset.loop = '1'; const sn = c.style.scrollSnapType; c.style.scrollSnapType = 'none'; c.scrollLeft = w; c.style.scrollSnapType = sn; }
+  carWrap(c) { const w = this.carSet(c); if (!w) return; if (c.scrollLeft >= w * 1.5) { const sn = c.style.scrollSnapType; c.style.scrollSnapType = 'none'; c.scrollLeft -= w; c.style.scrollSnapType = sn; } else if (c.scrollLeft < w * 0.5) { const sn = c.style.scrollSnapType; c.style.scrollSnapType = 'none'; c.scrollLeft += w; c.style.scrollSnapType = sn; } }
+  glide(c, to) {
+    if (c._raf) cancelAnimationFrame(c._raf);
+    const from = c.scrollLeft, dist = to - from, dur = 1300, t0 = performance.now();
+    const snap = c.style.scrollSnapType; c.style.scrollSnapType = 'none';
+    const ease = x => -(Math.cos(Math.PI * x) - 1) / 2;
+    const step = now => { const k = Math.min(1, (now - t0) / dur); c.scrollLeft = from + dist * ease(k); if (k < 1 && !c._stop) c._raf = requestAnimationFrame(step); else { c._raf = 0; c._stop = false; this.carWrap(c); c.style.scrollSnapType = snap; } };
+    c._raf = requestAnimationFrame(step);
+  }
+  componentDidUpdate() { this.onScroll && this.onScroll(); }
+  componentWillUnmount() { window.removeEventListener('scroll', this.onScroll, true); window.removeEventListener('resize', this.onScroll); clearInterval(this.carT); document.removeEventListener('scroll', this.onCarScroll, true); document.removeEventListener('pointerdown', this.onCarHold, true); document.removeEventListener('touchstart', this.onCarHold, true); document.removeEventListener('wheel', this.onCarHold, true); }
+  prog(el, a, b) { const r = el.getBoundingClientRect(), vh = window.innerHeight || 800; return Math.max(0, Math.min(1, (vh * a - r.top) / (r.height + vh * b))); }
+  setupCapsule(im) {
+    const W = 590, H = 325, c = document.createElement('canvas'); c.width = W; c.height = H;
+    const x = c.getContext('2d'); x.drawImage(im, 0, 0, W, H);
+    const d = x.getImageData(0, 0, W, H).data;
+    const lum = (i) => d[i] * 0.3 + d[i + 1] * 0.59 + d[i + 2] * 0.11;
+    let bg = 0, n = 0; for (let yy = 0; yy < H; yy += 6) for (const xx of [4, 8, W - 9, W - 5]) { bg += lum((yy * W + xx) * 4); n++; } bg /= n;
+    const ps = [], cx = W / 2, cy = H / 2;
+    for (let yy = 0; yy < H; yy += 2) for (let xx = 0; xx < W; xx += 2) {
+      const i = (yy * W + xx) * 4; if (lum(i) < bg + 14) continue;
+      const ang = Math.atan2(yy - cy, xx - cx) + (Math.random() - .5) * 1.6, sp = 60 + Math.random() * 260;
+      ps.push({ x: xx, y: yy, c: 'rgb(' + d[i] + ',' + d[i + 1] + ',' + d[i + 2] + ')', vx: Math.cos(ang) * sp, vy: Math.sin(ang) * sp - 40 - Math.random() * 60, dl: (xx / W) * .35 + Math.random() * .2 });
+    }
+    // fundo sem a cápsula
+    const bgc = document.createElement('canvas'); bgc.width = W; bgc.height = H; const bx = bgc.getContext('2d');
+    bx.drawImage(im, 0, 0, W, H);
+    for (const p of ps) { const i = (p.y * W + p.x) * 4; bx.fillStyle = 'rgb(' + Math.round(bg * 1.0) + ',' + Math.round(bg * .99) + ',' + Math.round(bg * .975) + ')'; bx.fillRect(p.x - 1, p.y - 1, 4, 4); }
+    bx.filter = 'blur(6px)'; const tmp = document.createElement('canvas'); tmp.width = W; tmp.height = H; tmp.getContext('2d').drawImage(bgc, 0, 0); bx.clearRect(0, 0, W, H); bx.drawImage(tmp, 0, 0);
+    this.cap = { im, ps, bgc, W, H };
+  }
+  drawCapsule(p) {
+    const cv = document.getElementById('uso-cv'); if (!cv || !this.cap) return;
+    const g = cv.getContext('2d'), { im, ps, bgc, W, H } = this.cap;
+    if (p <= 0.001) { g.drawImage(im, 0, 0, W, H); return; }
+    g.drawImage(bgc, 0, 0);
+    for (const q of ps) {
+      const t = Math.max(0, Math.min(1, (p - q.dl) / .45)), e = 1 - Math.pow(1 - t, 3);
+      g.globalAlpha = 1 - t * .75; g.fillStyle = q.c;
+      const s = 2.2 - t * 1.1; g.fillRect(q.x + q.vx * e, q.y + q.vy * e, s, s);
+    }
+    g.globalAlpha = 1;
+  }
+  tick() {
+    document.querySelectorAll('.car').forEach(c => { if (!c.classList.contains('car-on') && c.getBoundingClientRect().top < (window.innerHeight || 800) * 0.88) c.classList.add('car-on'); });
+    const ag = document.getElementById('atv-grid');
+    if (ag && !ag.classList.contains('atv-on')) { const r = ag.getBoundingClientRect(); if (r.top < (window.innerHeight || 800) * 0.88) ag.classList.add('atv-on'); }
+    const cta = document.getElementById('main-cta');
+    if (cta) { const r = cta.getBoundingClientRect(); const show = r.bottom < 0; if (show !== this.state.showBar) this.setState({ showBar: show }); }
+    const uso = document.getElementById('uso');
+    if (uso) {
+      const list = uso.querySelector('ol'), line = document.getElementById('uso-line');
+      if (list && line) {
+        const r = list.getBoundingClientRect(), vh = window.innerHeight || 800;
+        const fill = Math.max(0, Math.min(r.height, vh * .68 - r.top));
+        line.style.height = fill + 'px';
+        uso.querySelectorAll('[data-uso-dot]').forEach(dot => { const dr = dot.getBoundingClientRect(); const on = fill > 4 && dr.top + 22 <= r.top + fill + 24; dot.style.background = on ? '#B59767' : '#fff'; dot.style.borderColor = on ? '#B59767' : '#E3D7C5'; dot.style.color = on ? '#322421' : '#B59767'; dot.style.transform = on ? 'scale(1.06)' : 'scale(1)'; const li = dot.parentElement; if (li) li.style.opacity = on ? '1' : '.5'; });
+      }
+      const vid = document.getElementById('uso-vid');
+      if (vid) {
+        const r = vid.getBoundingClientRect(), vh = window.innerHeight || 800;
+        const vis = Math.max(0, Math.min(r.bottom, vh) - Math.max(r.top, 0)) / Math.max(1, r.height);
+        if (vis > .5 && vid.paused) { vid.muted = true; const pr = vid.play(); if (pr && pr.catch) pr.catch(() => {}); }
+        else if (vis < .15 && !vid.paused) vid.pause();
+      }
+    }
+    const fr = document.getElementById('mf-frame'), mi = document.getElementById('mf-img');
+    if (fr && mi) { const pr = this.prog(fr, 1, 1); mi.style.transform = 'translateY(' + ((pr - .5) * -18).toFixed(2) + '%)'; }
+  }
+  save(k, v) { try { localStorage.setItem(k, v); } catch (e) {} }
+  renderVals() {
+    const s = this.state, d = s.vp === 'desktop';
+    const BRL = v => v.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
+    const IMG = 'https://4lifenutrition.com.br';
+    const PR = { um: 99.9, dois: 179.8, tres: 239.7, assina: 79.92 };
+    const NOITES = { um: 60, dois: 120, tres: 180, assina: 60 };
+    const BUMP = 179.9;
+    const price = PR[s.lad] + (s.bump ? BUMP : 0);
+    const pn = v => BRL(v / 60) + ' por noite';
+    const STS = [['Céu', 'ceu'], ['Magnésio', 1], ['8 horas', 2], ['3 ativos', 3]].map(([name, n]) => ({ name, src: './story-' + n + '.mp4', poster: './story-' + n + '.jpg' }));
+    const FAQL = [
+        { q: 'Quanto tempo dura um frasco?', a: '60 noites, tomando 1 cápsula por dia.' },
+        { q: 'E se não funcionar para mim?', a: 'Na primeira compra, você tem 30 dias de garantia, mesmo com o frasco aberto. É só chamar no WhatsApp.' },
+        { q: 'Quando chega?', a: 'O frete é grátis para todo o Brasil. O prazo aparece no carrinho assim que você digita o CEP.' },
+        { q: 'Posso tomar duas cápsulas?', a: 'Não. A dose de melatonina já está no limite da Anvisa para um dia.' },
+        { q: 'Vou acordar sonolento?', a: 'A maioria das pessoas não. Algumas sentem sonolência pela manhã, principalmente nos primeiros dias ou quando tomam tarde demais. Tomar sempre no mesmo horário, 30 minutos antes de deitar, ajuda.' },
+        { q: 'Causa dependência?', a: 'Melatonina na dose de suplemento não é associada à dependência dos remédios para dormir. Se você sentir que não consegue dormir sem ela, converse com seu médico.' },
+        { q: 'Por que magnésio na forma de óxido?', a: 'O óxido concentra mais magnésio por grama, o que permite colocar 65 mg numa cápsula só, junto com os outros quatro ativos. Formas como o bisglicinato são mais bem absorvidas, mas ocupam mais espaço: precisaríamos de mais cápsulas por noite.' },
+        { q: 'Posso tomar junto com outro suplemento?', a: 'Pode, mas some as doses: magnésio, B6 e ácido fólico também aparecem em multivitamínicos. Na dúvida, fale com seu médico ou nutricionista.' },
+        { q: 'A cápsula é de origem animal?', a: 'Não. É de celulose.' }
+      ];
+    const SLOTS = [
+      { k: 'Frasco', img: './dream-ez-frasco.jpg', alt: 'Frasco de Dream EZ, 60 cápsulas', fit: 'cover' },
+      { k: 'Melatonina sozinha não resolveu?', img: './arte-melatonina-sozinha.jpg', alt: 'Mão segurando o Dream EZ: melatonina sozinha não resolveu? Dream EZ junta 5 ativos numa cápsula só', fit: 'cover' },
+      { k: 'Benefícios', img: './dream-ez-beneficios.jpg', alt: 'Mão segurando o frasco de Dream EZ ao lado de uma lista de benefícios', fit: 'cover' },
+      { k: '5 ativos, 1 cápsula, 60 noites', img: './arte-5-ativos.jpg', alt: 'Frasco de Dream EZ com cápsulas e os cinco ativos: melatonina 0,21 mg, magnésio, triptofano, vitamina B6 e ácido fólico', fit: 'cover' },
+      { k: 'Informação nutricional', img: './tabela-nutricional.jpg', alt: 'Tabela de informação nutricional: porção de 0,5 g (1 cápsula) com magnésio 65 mg (15% VD), vitamina B6 4 mg (308% VD), ácido fólico 550 mcg (137% VD), triptofano 220 mg e melatonina 210 mcg', fit: 'cover' }
+    ];
+    const g = SLOTS[s.gi];
+    const end = new Date(s.now + 59 * 864e5);
+    const short = dt => dt.toLocaleDateString('pt-BR', { day: '2-digit', month: '2-digit' });
+    const bottleTxt = { um: `Um frasco dura 60 noites: este acaba por volta de ${short(end)}.`, dois: 'Com 2 frascos são 120 noites: tempo para criar a rotina sem interromper.', tres: 'Com 3 frascos são 180 noites: seis meses de rotina pelo menor preço por noite.', assina: 'Um frasco dura 60 noites. Na assinatura, o próximo chega a cada 2 meses, quando o atual acaba.' }[s.lad];
+    return {
+      setMobile: () => { this.setState({ vp: 'mobile' }); this.save('dzf-vp', 'mobile'); },
+      setDesktop: () => { this.setState({ vp: 'desktop' }); this.save('dzf-vp', 'desktop'); },
+      vpMobBg: d ? '#fff' : '#412E28', vpMobFg: d ? '#412E28' : '#fff', vpDeskBg: d ? '#412E28' : '#fff', vpDeskFg: d ? '#fff' : '#412E28',
+      frameW: d ? '1180px' : '100%', frameMax: d ? '100%' : '560px', frameR: '0',
+      navPad: d ? '16px 32px' : '12px 16px', navLinks: d ? 'flex' : 'none', crumbPad: d ? '32px' : '20px',
+      pdpCols: d ? 'minmax(0,1.05fr) minmax(0,1fr)' : 'minmax(0,1fr)', pdpGap: d ? '48px' : '0', pdpPad: d ? '28px 32px 8px' : '12px 0 0',
+      galPos: d ? 'sticky' : 'relative', galCols: d ? '72px minmax(0,1fr)' : 'minmax(0,1fr)', galPad: d ? '0' : '0 16px',
+      galRatio: '4/5',
+      mainCol: d ? '2' : '1', thumbsRow: d ? '1' : '2', thumbsDir: d ? 'column' : 'row', thumbSize: d ? '72px' : '52px',
+      boxPad: d ? '0 0 24px' : '28px 20px 16px', pnameSize: d ? '28px' : '24px', tagSize: d ? '50px' : '30px', stTopPad: d ? '14px 40px 12px' : '12px 12px 10px', stGap: d ? '26px' : '16px', ladMt: d ? '24px' : '24px', bhStarMb: d ? '14px' : '14px', bhTagMb: d ? '14px' : '12px', bhNameMb: d ? '20px' : '22px', bulMb: d ? '22px' : '0', bulGap: d ? '14px 12px' : '16px 12px', bulIg: d ? '10px' : '8px', bulFs: d ? '13.5px' : '12.5px', bulIc: d ? '34px' : '28px', bulSv: d ? '19px' : '16px', doseShort: d ? 'none' : 'block', doseFull: d ? 'block' : 'none',
+      secPad: d ? '56px 32px' : '56px 20px', h2Size: d ? '40px' : '28px', h3Size: d ? '24px' : '20px', heroSize: d ? '52px' : '32px',
+      stripMt: d ? '40px' : '36px',
+      ritualCols: d ? 'minmax(0,1fr) minmax(0,1fr)' : 'minmax(0,1fr)', ritualImgH: d ? '480px' : '340px', ritualPad: d ? '56px 48px' : '48px 20px 56px',
+      capRatio: d ? '921/300' : '921/453',
+      whyCols: 'minmax(0,1fr)', whyGap: d ? '48px' : '40px',
+      ctaPad: d ? '64px 56px' : '52px 20px 60px', ctaCols: d ? 'minmax(0,1fr) minmax(0,1fr)' : 'minmax(0,1fr)', ctaAlign: 'left', ctaSelf: 'center',
+      chB: d ? '56px' : '36px', qrPad: d ? '28px 30px' : '16px 14px', qrSeal: d ? '68px' : '50px', qrSealIc: d ? '30px' : '24px', qrFactsMt: d ? '22px' : '14px', qrFactsGap: d ? '10px' : '6px', qrFactPad: d ? '16px' : '10px 12px', qrRtMt: d ? '20px' : '14px', qrRtPt: d ? '18px' : '12px', qrIntroMb: d ? '20px' : '14px', qrTopGap: d ? '16px 20px' : '12px 14px', qrTop: d ? 'auto minmax(0,1fr) auto' : 'auto minmax(0,1fr)', qrBtnCol: d ? 'auto' : '1 / -1', qrH: d ? '26px' : '21px',
+      cols2: d ? 'repeat(2,minmax(0,1fr))' : 'minmax(0,1fr)', cols3: d ? 'repeat(3,minmax(0,1fr))' : 'minmax(0,1fr)',
+      stickyCols: d ? '1fr 280px' : 'minmax(0,1fr) 150px', stickyPad: d ? '12px 32px' : '10px 12px',
+      ticker: this.ticker(),
+      bag: s.cart.reduce((a, c) => a + c.q, 0),
+      barY: s.showBar && !s.cartOpen ? '0' : '110%', barVis: s.showBar && !s.cartOpen ? 'visible' : 'hidden', barHidden: s.showBar ? 'false' : 'true',
+      isDesk: d, isMob: !d, frameCls: d ? 'desk' : 'mob',
+      slots: SLOTS.map((x, i) => ({ img: x.img, alt: x.alt, fit: x.fit, span: i === 0 ? '1 / -1' : 'auto', zl: 'Ampliar foto ' + (i + 1) + ': ' + x.k, dl: 'Ir para a foto ' + (i + 1),
+        dw: i === s.gi ? '20px' : '7px', dc: i === s.gi ? '#412E28' : '#CAB99E',
+        zoom: () => this.setState({ zi: i }), go: () => this.galTo(i) })),
+      galCount: (s.gi + 1) + ' / ' + SLOTS.length,
+      galScroll: e => { const t = e.currentTarget || e.target; const i = Math.round(t.scrollLeft / Math.max(1, t.clientWidth)); if (i !== this.state.gi) this.setState({ gi: i }); },
+      galPrev: () => this.galTo(Math.max(0, s.gi - 1)), galNext: () => this.galTo(Math.min(SLOTS.length - 1, s.gi + 1)),
+      zoomOpen: s.zi >= 0, zImg: s.zi >= 0 ? SLOTS[s.zi].img : '', zAlt: s.zi >= 0 ? SLOTS[s.zi].alt : '', zCount: s.zi >= 0 ? (s.zi + 1) + ' / ' + SLOTS.length : '',
+      zClose: () => this.setState({ zi: -1 }), zPrev: () => this.setState(p => ({ zi: (p.zi - 1 + SLOTS.length) % SLOTS.length })), zNext: () => this.setState(p => ({ zi: (p.zi + 1) % SLOTS.length })),
+      ritualImg: './rotina-noite-dreamez.jpg', ritualImgH2: d ? '560px' : '440px',
+      ladder: [
+        { id: 'um', t: 'Comprar 1 unidade', d: '1 frasco · 60 noites', p: BRL(99.9), de: BRL(119.9), off: '-17%', pn: pn(99.9), tag: '' },
+        { id: 'dois', t: 'Comprar 2 unidades', d: '2 frascos · 120 noites · ' + BRL(89.9) + ' cada', p: BRL(179.8), de: BRL(239.8), off: '-25%', pn: BRL(179.8 / 120) + ' por noite', tag: 'mais escolhido' },
+        { id: 'tres', t: 'Comprar 3 unidades', d: '3 frascos · 180 noites · ' + BRL(79.9) + ' cada', p: BRL(239.7), de: BRL(359.7), off: '-33%', pn: BRL(239.7 / 180) + ' por noite', tag: 'melhor preço' }
+      ].map(o => { const on = s.lad === o.id; return { ...o, on: on ? 'true' : 'false', border: on ? '#412E28' : '#E3D7C5', bg: on ? '#F7F0E3' : '#fff', dot: on ? '#412E28' : 'transparent', pick: () => this.setState({ lad: o.id }) }; }),
+      ctaTxt: s.flash ? 'No carrinho ✓' : 'Adicionar ao carrinho · ' + BRL(price),
+      toggleBump: () => this.setState(p => ({ bump: !p.bump })), bumpOn: s.bump ? 'true' : 'false', bumpMark: s.bump ? '✓' : '',
+      bumpBorder: s.bump ? '#412E28' : '#B59767', bumpBg: s.bump ? '#F7F0E3' : '#FFFBF4', bumpChk: s.bump ? '#412E28' : '#fff',
+      pickAssina: () => this.setState({ lad: 'assina' }), assinaOn: s.lad === 'assina' ? 'true' : 'false',
+      assinaBorder: s.lad === 'assina' ? '#412E28' : '#CAB99E', assinaBg: s.lad === 'assina' ? '#F7F0E3' : '#fff', assinaDot: s.lad === 'assina' ? '#412E28' : 'transparent',
+      addBag: () => {
+        const main = { um: { id: 'dz1', n: 'Dream EZ', sub: '1 frasco · 60 noites', p: 99.9, de: 119.9 }, dois: { id: 'dz2', n: 'Dream EZ · 2 unidades', sub: '2 frascos · 120 noites', p: 179.8, de: 239.8 }, tres: { id: 'dz3', n: 'Dream EZ · 3 unidades', sub: '3 frascos · 180 noites', p: 239.7, de: 359.7 }, assina: { id: 'dzs', n: 'Dream EZ · assinatura', sub: 'a cada 2 meses · 20% off', p: 79.92, de: 99.9 } }[s.lad];
+        const add = [{ ...main, img: './dream-ez-frasco.jpg' }];
+        if (s.bump) add.push({ id: 'kit', n: 'Kit Longevity', sub: 'Dream EZ + NAC + Vitamin Code', p: 179.9, de: 295.76, img: './prod-kit-longevity.jpg' });
+        this.setState(p => { const c = p.cart.map(x => ({ ...x })); add.forEach(a => { const f = c.find(x => x.id === a.id); if (f) f.q += 1; else c.push({ ...a, q: 1 }); }); return { cart: c, cartOpen: true, flash: true }; });
+        clearTimeout(this.ft); this.ft = setTimeout(() => this.setState({ flash: false }), 1400);
+      },
+      openCart: () => this.setState({ cartOpen: true }), closeCart: () => this.setState({ cartOpen: false }),
+      cartOpen: s.cartOpen, cartEmpty: s.cart.length === 0,
+      cartItems: s.cart.map(c => ({ ...c, pt: BRL(c.p * c.q), de: BRL(c.de * c.q),
+        inc: () => this.setState(p => ({ cart: p.cart.map(x => x.id === c.id ? { ...x, q: x.q + 1 } : x) })),
+        dec: () => this.setState(p => ({ cart: p.cart.map(x => x.id === c.id ? { ...x, q: x.q - 1 } : x).filter(x => x.q > 0) })),
+        rm: () => this.setState(p => ({ cart: p.cart.filter(x => x.id !== c.id) })) })),
+      hasUps: s.cart.length > 0 && !(s.cart.some(c => c.id === 'nac') && s.cart.some(c => c.id === 'kit')),
+      cartTotal: BRL(s.cart.reduce((a, c) => a + c.p * c.q, 0)),
+      ups: (s.cart.length ? [
+        { id: 'nac', t: 'Leve também o NAC com desconto', n: 'NAC', sub: 'N-acetil L-cisteína · 60 cápsulas', p: 99.9, de: 109.9, img: './prod-nac.jpg' },
+        { id: 'kit', t: 'Leve também o Kit Longevity com desconto', n: 'Kit Longevity', sub: 'Dream EZ + NAC + Vitamin Code', p: 249.9, de: 295.76, img: './prod-kit-longevity.jpg' }
+      ] : []).filter(u => !s.cart.some(c => c.id === u.id)).map(u => ({ ...u, pt: BRL(u.p), de: BRL(u.de), add: () => this.setState(p => ({ cart: [...p.cart, { id: u.id, n: u.n, sub: u.sub, p: u.p, de: u.de, img: u.img, q: 1 }] })) })),
+      cmpCtaPad: d ? '32px 36px' : '24px 20px', cmpCtaCols: d ? 'minmax(0,1fr) auto' : 'minmax(0,1fr)', cmpCtaH: d ? '28px' : '23px',
+      goBuy: () => { const el = document.getElementById('main-cta'); if (el) el.scrollIntoView({ behavior: 'smooth', block: 'center' }); },
+      checkoutUrl: (() => { const B = 'https://4lifenutrition.com.br/produtos/'; if (s.cart.some(c => c.id.startsWith('dz'))) return B + 'dream-ez'; if (s.cart.some(c => c.id === 'kit')) return B + 'kit-longevity'; if (s.cart.some(c => c.id === 'nac')) return B + 'nac'; return B + 'dream-ez'; })(),
+      checkout: e => { const B = 'https://4lifenutrition.com.br/produtos/'; const url = s.cart.some(c => c.id.startsWith('dz')) ? B + 'dream-ez' : s.cart.some(c => c.id === 'kit') ? B + 'kit-longevity' : s.cart.some(c => c.id === 'nac') ? B + 'nac' : B + 'dream-ez'; if (e && e.preventDefault) e.preventDefault(); try { window.top.location.href = url; } catch (err) { window.location.href = url; } },
+      endShort: short(end), bottleTxt,
+      cols4q: 'repeat(2,minmax(0,1fr))', b2Cols: d ? 'minmax(0,.8fr) minmax(0,1.2fr)' : 'minmax(0,1fr)', b2Gap: d ? '40px' : '32px', b2ImgPos: d ? 'sticky' : 'relative', b3Cols: d ? 'minmax(0,.75fr) minmax(0,1.25fr)' : 'minmax(0,1fr)', carFlow: d ? 'row' : 'column', carOv: d ? 'visible' : 'auto', carSnap: d ? 'none' : 'x mandatory', carM: d ? '0' : '0 -20px', carP: d ? '0' : '6px 20px 8px', carSp: d ? '0' : '20px', carHint: d ? 'none' : 'flex', atvAuto: '44%', revAuto: '84%', revGap: d ? '14px' : '10px', colsAtv: d ? 'repeat(6,minmax(0,1fr))' : 'none',
+      usoCols: d ? 'minmax(0,.85fr) minmax(0,1.15fr)' : 'minmax(0,1fr)', usoGap: d ? '56px' : '40px', usoH2Mb: d ? '48px' : '24px', stepGap: d ? '44px' : '32px', stepLast: '0px',
+      mfOuter: d ? '56px 32px' : '24px 12px', mfPad: d ? '56px 64px' : '28px 18px', mfCols: d ? 'minmax(0,1.1fr) minmax(0,.9fr)' : 'minmax(0,1fr)', mfGap: d ? '56px' : '24px',
+      vids: STS.map((v, i) => ({ ...v, cls: s.seen.includes(i) ? 'st-seen' : 'st-new', dl: (i * 0.45).toFixed(2) + 's', label: 'Ver vídeo: ' + v.name, ring: s.seen.includes(i) ? '#B8A78F' : 'linear-gradient(45deg,#B59767,#8F513D 55%,#CAB99E)', open: () => this.setState(p => ({ st: i, stP: 0, seen: p.seen.includes(i) ? p.seen : [...p.seen, i] })) })),
+      stOpen: s.st >= 0,
+      stSrc: s.st >= 0 ? STS[s.st].src : '', stPoster: s.st >= 0 ? STS[s.st].poster : '', stName: s.st >= 0 ? STS[s.st].name : '',
+      stBars: STS.map((v, i) => ({ w: i < s.st ? '100%' : i === s.st ? Math.round(s.stP * 100) + '%' : '0%' })),
+      stTime: e => { const v = e.target; if (v.duration) this.setState({ stP: v.currentTime / v.duration }); },
+      stNext: () => this.setState(p => { const n = p.st + 1; return n >= STS.length ? { st: -1, stP: 0 } : { st: n, stP: 0, seen: p.seen.includes(n) ? p.seen : [...p.seen, n] }; }),
+      stPrev: () => this.setState(p => ({ st: Math.max(0, p.st - 1), stP: 0 })),
+      stClose: () => this.setState({ st: -1, stP: 0 }),
+      get ativosCar() { return d ? this.ativos : [0, 1, 2].flatMap(k => this.ativos.map(a => ({ ...a, alt: k === 1 ? a.alt : '' }))); },
+      get revsCar() { return d ? this.revs : [0, 1, 2].flatMap(() => this.revs); },
+      colsRev: d ? 'repeat(4,minmax(0,1fr))' : 'none',
+      revs: [
+        { t: 'Resultado em poucos dias', a: 'Rayane', x: 'Comecei o uso do Dream AZ e em poucos dias já comecei a sentir a diferença, como empreendedora tenho dificuldade no desacelerar, e o Dream AZ tem me ajudado a me manter dormindo e acordar com a mente mais “limpa”. Tenho estado mais focada e menos estressada. Amei e super recomendo!' },
+        { t: 'Qualidade do sono!', a: 'Patrícia T.', x: 'Estou utilizando há poucos dias e já noto uma melhoria impressionante na qualidade do sono. Tenho acordado mais descansada e com mais energia para as atividades do dia, para os treinos de musculação e corrida. tem sido nítida a melhoria da disposição devido ao sono mais reparador! Estou amando!' },
+        { t: 'Estou amando!', a: 'Nathalia M.', x: 'Estou usando o dream EZ há alguns dias e a mudança na qualidade do meu sono é muito perceptível. Durmo super bem, sem ficar acordando várias vezes à noite e acordo disposta, com energia!' },
+        { t: 'Primeira noite', a: 'Maryana', x: 'Estava acordando muito durante a noite e acordava muito cansada e confesso que estava com um pouco de medo de consumir o produto, mas na primeira vez que tomei o dream ez, consegui dormir a noite toda e ter o sono mais profundo!' }
+      ].map((r, i) => ({ ...r, rd: (i * 0.16).toFixed(2) + 's', fd: (-i * 1.6).toFixed(2) + 's' })),
+      faqPad: d ? '48px 32px' : '28px 16px', faqOpen: s.faqOpen, faqOpenAria: s.faqOpen ? 'true' : 'false', faqRot: s.faqOpen ? '180deg' : '0deg', faqSub: s.faqOpen ? 'Toque para fechar' : FAQL.length + ' respostas antes de comprar', faqOpenToggle: () => this.setState(p => ({ faqOpen: !p.faqOpen })),
+      faqCols: d ? 'minmax(0,.8fr) minmax(0,1.4fr)' : 'minmax(0,1fr)', faqGap: d ? '48px' : '32px',
+      faqShow: s.faqAll ? FAQL : FAQL.slice(0, 5), faqHasMore: FAQL.length > 5, faqBtn: s.faqAll ? 'Ver menos perguntas' : 'Ver mais ' + (FAQL.length - 5) + ' perguntas', faqToggle: () => this.setState(p => ({ faqAll: !p.faqAll })),
+      swipeHint: d ? 'none' : 'block',
+      paraQuem: [
+        { i: '0,21', t: 'Melatonina no limite da Anvisa: 0,21 mg.', d: 'Para quem quer transformar o fim do dia num ritual, não num apagar de luz.' },
+        { i: 'mg', t: 'Cada ativo em mg.', d: 'Para quem já usa melatonina isolada e quer saber exatamente o que está tomando.' },
+        { i: '5 em 1', t: 'Cinco ativos, uma cápsula.', d: 'Para quem prefere isso a montar combinação de três frascos.' },
+        { i: '22h', t: 'Um horário fixo.', d: '1 cápsula, 30 minutos antes de deitar, sempre na mesma hora. Para quem quer criar rotina.' }
+      ],
+      ativos: [
+        { n: 'Melatonina', q: '210 mcg (0,21 mg)', vd: '%VD não estabelecido', f: 'hormônio que o corpo produz quando escurece', img: './ativo-melatonina.png' },
+        { n: 'L-triptofano', q: '220 mg', vd: '%VD não estabelecido', f: 'aminoácido de onde o corpo produz serotonina e melatonina', img: './ativo-l-triptofano.png' },
+        { n: 'Magnésio (óxido)', q: '65 mg', vd: '15% VD', f: 'auxilia no funcionamento muscular e do sistema nervoso', img: './ativo-magnesio.png' },
+        { n: 'Vitamina B6', q: '4 mg', vd: '308% VD', f: 'auxilia no funcionamento do sistema nervoso', img: './ativo-vitamina-b6.png' },
+        { n: 'Ácido fólico', q: '550 mcg', vd: '137% VD', f: 'auxilia no processo de divisão celular', img: './ativo-acido-folico.png' },
+        { n: 'Sinergia', q: '5 ativos · 1 cápsula', vd: '', f: 'os cinco juntos, numa dose só por noite, cada um com quantidade declarada', img: './ativo-sinergia.png' }
+      ].map((a, i) => ({ ...a, alt: 'Imagem ilustrativa do ativo ' + a.n, rd: (i * 0.14).toFixed(2) + 's', rd2: (0.45 + i * 0.14).toFixed(2) + 's', fd: (-i * 1.1).toFixed(2) + 's', bd: (-8 + i * 0.7).toFixed(2) + 's' })),
+      xsCard: d ? 'minmax(0,1fr)' : '108px minmax(0,1fr)', xsRatio: d ? '4/3' : '1/1',
+      xs: [
+        { n: 'Kit Longevity', d: 'Dream EZ + NAC + Vitamin Code', p: 'R$ 295,76', img: './prod-kit-longevity.jpg', alt: 'Potes de Vitamin Code, Dream EZ e NAC lado a lado', href: 'https://4lifenutrition.com.br/produtos/kit-longevity' },
+        { n: 'NAC', d: 'N-acetil L-cisteína · 60 cápsulas', p: 'R$ 109,90', img: './prod-nac.jpg', alt: 'Pote de NAC, 60 cápsulas', href: 'https://4lifenutrition.com.br/produtos/nac' },
+        { n: 'Vitamin Code', d: 'Multivitamínico · 60 cápsulas', p: 'R$ 139,90', img: './prod-vitamin-code.jpg', alt: 'Pote de Vitamin Code, 60 cápsulas', href: 'https://4lifenutrition.com.br/produtos/vitamin-code' }
+      ],
+      sName: { um: 'Dream EZ · 1 unidade', dois: 'Dream EZ · 2 unidades', tres: 'Dream EZ · 3 unidades', assina: 'Dream EZ · assinatura 2 meses' }[s.lad] + (s.bump ? ' + Kit Longevity' : ''),
+      sPrice: BRL(price) + (s.bump ? '' : ' · ' + BRL(PR[s.lad] / NOITES[s.lad]) + ' por noite'),
+      sCta: s.flash ? 'No carrinho ✓' : 'Adicionar'
+    };
+  }
+  galTo(i) { const t = document.getElementById('gal-track'); if (t) t.scrollTo({ left: i * t.clientWidth, behavior: 'smooth' }); this.setState({ gi: i }); }
+  ticker() {
+    if (!this._tk) {
+      const items = ['Frete grátis no Dream EZ', '6x sem juros · Pix · boleto', 'Leve 3 e economize 33%', '30 dias de garantia na primeira compra'];
+      const span = (t, i) => React.createElement('span', { key: i, style: { flex: '0 0 auto', whiteSpace: 'nowrap' } }, React.createElement('span', { style: { color: '#CAB99E', marginRight: 10, fontSize: 8, verticalAlign: 2 } }, '●'), t);
+      this._tk = React.createElement('div', { style: { display: 'inline-flex', flex: '0 0 auto', gap: 36, paddingLeft: 16, animation: 'tk 30s linear infinite' } }, [...items, ...items].map(span));
+    }
+    return this._tk;
+  }
+}
+</script>
+</body>
+</html>
