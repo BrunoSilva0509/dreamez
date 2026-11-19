@@ -663,6 +663,17 @@ class Component extends DCLogic {
     if (fr && mi) { const pr = this.prog(fr, 1, 1); mi.style.transform = 'translateY(' + ((pr - .5) * -18).toFixed(2) + '%)'; }
   }
   save(k, v) { try { localStorage.setItem(k, v); } catch (e) {} }
+  // Link do checkout da loja com os itens do carrinho da LP.
+  urlDoCheckout(cart) {
+    const porItem = { dz1: ['dream-ez', 1], dzs: ['dream-ez', 1], dz2: ['dream-ez', 2], dz3: ['dream-ez', 3], kit: ['kit-longevity', 1], nac: ['nac', 1] };
+    const qtd = {};
+    cart.forEach(c => { const p = porItem[c.id]; if (p) qtd[p[0]] = (qtd[p[0]] || 0) + p[1] * c.q; });
+    const itens = Object.keys(qtd).map(h => h + ':' + Math.min(qtd[h], 10)).join(',');
+    const u = new URL('https://4lifenutrition.com.br/api/carrinho/lp');
+    if (itens) u.searchParams.set('itens', itens);
+    try { new URLSearchParams(window.location.search).forEach((v, k) => { if (/^(utm_[a-z_]+|gclid|fbclid)$/.test(k)) u.searchParams.set(k, v); }); } catch (e) {}
+    return u.toString();
+  }
   renderVals() {
     const s = this.state, d = s.vp === 'desktop';
     const BRL = v => v.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
@@ -759,8 +770,8 @@ class Component extends DCLogic {
       ] : []).filter(u => !s.cart.some(c => c.id === u.id)).map(u => ({ ...u, pt: BRL(u.p), de: BRL(u.de), add: () => this.setState(p => ({ cart: [...p.cart, { id: u.id, n: u.n, sub: u.sub, p: u.p, de: u.de, img: u.img, q: 1 }] })) })),
       cmpCtaPad: d ? '32px 36px' : '24px 20px', cmpCtaCols: d ? 'minmax(0,1fr) auto' : 'minmax(0,1fr)', cmpCtaH: d ? '28px' : '23px',
       goBuy: () => { const el = document.getElementById('main-cta'); if (el) el.scrollIntoView({ behavior: 'smooth', block: 'center' }); },
-      checkoutUrl: (() => { const B = 'https://4lifenutrition.com.br/produtos/'; if (s.cart.some(c => c.id.startsWith('dz'))) return B + 'dream-ez'; if (s.cart.some(c => c.id === 'kit')) return B + 'kit-longevity'; if (s.cart.some(c => c.id === 'nac')) return B + 'nac'; return B + 'dream-ez'; })(),
-      checkout: e => { const B = 'https://4lifenutrition.com.br/produtos/'; const url = s.cart.some(c => c.id.startsWith('dz')) ? B + 'dream-ez' : s.cart.some(c => c.id === 'kit') ? B + 'kit-longevity' : s.cart.some(c => c.id === 'nac') ? B + 'nac' : B + 'dream-ez'; if (e && e.preventDefault) e.preventDefault(); try { window.top.location.href = url; } catch (err) { window.location.href = url; } },
+      checkoutUrl: this.urlDoCheckout(s.cart),
+      checkout: e => { const url = this.urlDoCheckout(s.cart); if (e && e.preventDefault) e.preventDefault(); try { window.top.location.href = url; } catch (err) { window.location.href = url; } },
       endShort: short(end), bottleTxt,
       cols4q: 'repeat(2,minmax(0,1fr))', b2Cols: d ? 'minmax(0,.8fr) minmax(0,1.2fr)' : 'minmax(0,1fr)', b2Gap: d ? '40px' : '32px', b2ImgPos: d ? 'sticky' : 'relative', b3Cols: d ? 'minmax(0,.75fr) minmax(0,1.25fr)' : 'minmax(0,1fr)', carFlow: d ? 'row' : 'column', carOv: d ? 'visible' : 'auto', carSnap: d ? 'none' : 'x mandatory', carM: d ? '0' : '0 -20px', carP: d ? '0' : '6px 20px 8px', carSp: d ? '0' : '20px', carHint: d ? 'none' : 'flex', atvAuto: '44%', revAuto: '84%', revGap: d ? '14px' : '10px', colsAtv: d ? 'repeat(6,minmax(0,1fr))' : 'none',
       usoCols: d ? 'minmax(0,.85fr) minmax(0,1.15fr)' : 'minmax(0,1fr)', usoGap: d ? '56px' : '40px', usoH2Mb: d ? '48px' : '24px', stepGap: d ? '44px' : '32px', stepLast: '0px',
