@@ -763,19 +763,29 @@ class Component extends DCLogic {
         const V = {
           dz1: 'https://app.vindi.com.br/customer/pages/6ef635eb-3315-4a9b-9c90-04acdf0dadb3/checkout_products/new',
           dz2: 'https://app.vindi.com.br/customer/pages/9dc73ef0-27ce-45e2-9e3a-300e5093fa8a/checkout_products/new',
-          dz3: 'https://app.vindi.com.br/customer/pages/5083f1bc-43c0-43d5-b110-df26a570c809/checkout_products/new'
+          dz3: 'https://app.vindi.com.br/customer/pages/5083f1bc-43c0-43d5-b110-df26a570c809/checkout_products/new',
+          dz1kit: 'https://app.vindi.com.br/customer/pages/7cf5290f-0b0a-4347-a987-cedee9a42be1/checkout_products/new',
+          dz2kit: 'https://app.vindi.com.br/customer/pages/a4eacbbf-59ce-4ea0-99a0-ab45e95e46c9/checkout_products/new',
+          dz3kit: 'https://app.vindi.com.br/customer/pages/f6d631d2-69f4-4d81-8b60-dc78fe82875a/checkout_products/new'
         };
-        const item = s.cart.find(c => V[c.id]);
-        return V[item ? item.id : ({ um: 'dz1', dois: 'dz2', tres: 'dz3' }[s.lad] || 'dz2')];
+        const item = s.cart.find(c => /^dz/.test(c.id));
+        const mainId = item ? item.id : ({ um: 'dz1', dois: 'dz2', tres: 'dz3' }[s.lad] || 'dz2');
+        const key = s.cart.some(c => c.id === 'kit') ? mainId + 'kit' : mainId;
+        return V[key] || V.dz2;
       })(),
       checkout: e => {
         const V = {
           dz1: 'https://app.vindi.com.br/customer/pages/6ef635eb-3315-4a9b-9c90-04acdf0dadb3/checkout_products/new',
           dz2: 'https://app.vindi.com.br/customer/pages/9dc73ef0-27ce-45e2-9e3a-300e5093fa8a/checkout_products/new',
-          dz3: 'https://app.vindi.com.br/customer/pages/5083f1bc-43c0-43d5-b110-df26a570c809/checkout_products/new'
+          dz3: 'https://app.vindi.com.br/customer/pages/5083f1bc-43c0-43d5-b110-df26a570c809/checkout_products/new',
+          dz1kit: 'https://app.vindi.com.br/customer/pages/7cf5290f-0b0a-4347-a987-cedee9a42be1/checkout_products/new',
+          dz2kit: 'https://app.vindi.com.br/customer/pages/a4eacbbf-59ce-4ea0-99a0-ab45e95e46c9/checkout_products/new',
+          dz3kit: 'https://app.vindi.com.br/customer/pages/f6d631d2-69f4-4d81-8b60-dc78fe82875a/checkout_products/new'
         };
-        const item = s.cart.find(c => V[c.id]);
-        const url = V[item ? item.id : ({ um: 'dz1', dois: 'dz2', tres: 'dz3' }[s.lad] || 'dz2')];
+        const item = s.cart.find(c => /^dz/.test(c.id));
+        const mainId = item ? item.id : ({ um: 'dz1', dois: 'dz2', tres: 'dz3' }[s.lad] || 'dz2');
+        const key = s.cart.some(c => c.id === 'kit') ? mainId + 'kit' : mainId;
+        const url = V[key] || V.dz2;
         if (e && e.preventDefault) e.preventDefault();
         try { window.top.location.href = url; } catch (err) { window.location.href = url; }
       },
